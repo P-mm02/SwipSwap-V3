@@ -1,0 +1,53 @@
+#topContainer{
+    margin-top: 5vh;
+    
+}
+#topImg2{
+    position: fixed;
+    right: 1vw;
+    bottom: 0;
+}
+#topImg1{
+    position: absolute;
+    left: 10vw;
+}
+@media screen and (max-width: 800px) {
+    #topImg1{
+        width: 60vw;
+    }
+    .chooseInterest .form-check-label{
+        font-size: 10px;
+    }        
+}
+#addSwapContainer{
+    margin: 100px;
+}
+#condition{
+    margin-left: 40px;
+}
+#choseInterest{
+    margin-left: 40px;
+}
+.choseShipment{
+    margin-left: 40px;
+}
+.chooseInterest{
+    border: 2px solid #FBB77F;
+    border-radius: 10px;
+    margin: 0 0 10px 10px;
+    width: 130px;
+}
+.chooseInterest .form-check-input{
+    margin-left: -10px;
+    border-color: #8BA2E0;
+}
+.chooseInterest .form-check-label{
+    margin-left: 10px;
+}
+.addDescription{
+    border-color: #8BA2E0;
+}
+#navBar{
+    width: 100vw;
+    height: auto;
+}

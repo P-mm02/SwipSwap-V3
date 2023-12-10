@@ -1,0 +1,61 @@
+<div class="profile container shadow" id="profileContainer">
+    <div class="d-flex align-items-center justify-content-center">
+        <img src="/img/profile/img_profile_01.png" alt="" class="mt-5">
+    </div>
+    <div class="d-flex align-items-center justify-content-center buttomLine">
+        <h2 class="mt-3 ">sasiwimol.rue</h2>
+    </div>
+    <div class="d-flex align-items-center justify-content-start profileList">
+        <img src="/img/profile/img_profile_02.png" alt="">                    
+        <a href="/views/profile.html" style=" text-decoration: none;" id="myProfileNav1">                        
+            <h3 style="margin-left: 5px;" >My profile</h3>
+        </a>                    
+    </div>
+    <div class="d-flex align-items-center justify-content-start profileList">
+        <img src="/img/profile/img_profile_03.png" alt=""  >
+        <a href="/views/profile-swap.html" style=" text-decoration: none; " id="myProfileNav2">                        
+            <h3>Swap</h3>
+        </a>                    
+    </div>
+    <div class="d-flex align-items-center justify-content-start profileList">
+        <img src="/img/profile/img_profile_04.png" alt="">
+        <a href="/views/profile-giveaway.html" style=" text-decoration: none;" id="myProfileNav3">                        
+            <h3>Giveaway</h3>
+        </a>                    
+    </div>
+    <!-- <div class="d-flex align-items-center justify-content-start profileList">
+        <img src="/img/profile/img_profile_05.png" alt="">
+        <a href="/profile-favorite.html" style="color: #213360; text-decoration: none;">                        
+            <h3>Favorite</h3>
+        </a>                    
+    </div> -->
+    <div class="d-flex align-items-center justify-content-start profileList">
+        <img src="/img/profile/img_profile_06.png" alt="">
+        <a href="/views/profile-history.html" style="text-decoration: none;" id="myProfileNav4">                        
+            <h3>History</h3>
+        </a>                    
+    </div>              
+    
+</div>
+<div class="d-flex align-items-center justify-content-center profileList">                    
+<a href="/login.html" style="color: #213360; text-decoration: none;">                        
+    <img src="/img/profile/img_profile_13.png" alt="">
+</a>                   
+</div> 
+
+<script>    
+        const fileName = window.location.pathname.split('/').pop();
+        if (fileName === 'profile.html') {
+        document.getElementById('myProfileNav1').style.color = '#F99746';
+        }    
+        if (fileName === 'profile-swap.html') {
+        document.getElementById('myProfileNav2').style.color = '#F99746';
+        }
+        if (fileName === 'profile-giveaway.html') {
+        document.getElementById('myProfileNav3').style.color = '#F99746';
+        }
+        if (fileName === 'profile-history.html') {
+        document.getElementById('myProfileNav4').style.color = '#F99746';
+        }
+</script>
+

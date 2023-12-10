@@ -1,0 +1,59 @@
+
+#profileContainer{
+    /* position: fixed; */
+    width: 351px;
+    height: 480px;
+    background-color: #fff;
+    left: 5%;
+    top: 15%;
+    z-index: 3;
+    border: 1px solid#707070;
+    border-radius: 11px;
+}
+.mainBord{
+    margin-top: 20vh;
+}
+.mainTab{
+    border: 1px solid;
+    border-radius: 13px;
+    background-color: #707070;
+}
+.mainTab1{
+    border: 1px solid #707070;
+    border-radius: 13px;
+    background-color: #fff;   
+    transition: 0.5s; 
+}
+.mainTab2{
+    background-color: transparent;
+    border-radius: 13px;
+    transition: 0.5s;
+}
+
+.profileList img{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.profileList{
+    margin-top: 20px;
+}
+.profileList a {
+    color: #160c03;
+}
+.profileList a h3:hover{
+    color: #F99746;
+    transition: 0.1s;
+}
+.profileList a.active{
+    color: #F99746;
+}
+
+.editProfileInput{
+    color: #D3D3D3;
+}
+.editProfileInput label{
+    margin-top: 20px;
+}
+.editProfileInput input , textarea{
+    margin-top: 10px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SwipSwap Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-7 col-sm-12 bg-white" id="loginLeft">
+            <img src="/img/img_login_01.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-4 col-sm-12 bg-white" id="loginRight">
+            <div class="top">
+                <img src="/img/img_login_02.png" id="loginLogo" alt="">            
+                <h1 id="header">Welcome!</h1>
+                <span>Log in your account</span>
+            </div>
+            <div class="bottom">
+                <form action="home.html" method="post" class="row" id="loginInput">
+                    <span>Student ID*</span>
+                    <input type="text" name="username" placeholder="รหัสนักศึกษา เช่น 6012345678" id="username" required>
+                    <span>Password*</span>
+                    <input type="password" name="password" placeholder="เลขประจำตัวบัตรประชาชน 13 หลัก" id="password" required>
+                    
+                    <!-- Redirect to "home.html" on form submission -->
+                    <a> 
+                        <button type="button" onclick="submitLoginForm()">Log in</button>
+                        <!-- <button type="submit">Log in</button> -->
+                    </a>
+                </form>
+                
+                <div id="responseContainer">
+                    <!-- Response properties will be displayed here แสดงข้อมูลที่ดึงมาจาก API -->
+                </div>
+            </div>
+        </div>        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+        function submitLoginForm() {
+            // Get values from the form
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Check if username or password is not provided
+            if (username.trim() === "" || password.trim() === "") {
+                alert("โปรดกรอกรหัสนักศึกษาและรหัสผ่านให้ครบถ้วน ก่อนเข้าสู่ระบบ");
+                return;
+            }
+
+            // Create the request body
+            const requestBody = {
+                UserName: username,
+                PassWord: password
+            };
+
+            // Perform the HTTP POST request using the Fetch API
+            fetch("https://restapi.tu.ac.th/api/v1/auth/Ad/verify", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Application-Key": "TU4fd2ebfd764d5500fdc3428be72358640aeec0e5f786eb4a5a3b0cc99dfe2e77cc1cf72141dc5f8e71fb51f1526929ce"
+                },
+                body: JSON.stringify(requestBody)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    // Check if the response status is 401 (Unauthorized)
+                    if (response.status === 401) {
+                        throw new Error("โปรดตรวจสอบรหัสนักศึกษาและรหัสผ่านอีกครั้ง");
+                    }
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Handle the response data
+                displayResponseProperties(data);
+                // Display "Login successed." if the API call is successful
+                alert("เข้าสู่ระบบสำเร็จ");
+                // Redirect to home.html
+                 window.location.href = "home.html";
+            })
+            .catch(error => {
+                // Handle errors
+                console.error("Error:", error);
+                // Display "Wrong password" if the API call fails
+                alert("โปรดตรวจสอบรหัสนักศึกษาและรหัสผ่านอีกครั้ง");
+            });
+        }
+
+        function displayResponseProperties(data) {
+            // Get the container element
+            const responseContainer = document.getElementById("responseContainer");
+
+            // Clear any previous content
+            responseContainer.innerHTML = "";
+
+            // Create a list to display properties
+            const list = document.createElement("ul");
+
+            // Loop through the properties in the response data
+            for (const property in data) {
+                if (data.hasOwnProperty(property)) {
+                    // Create list item for each property
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${property}: ${data[property]}`;
+                    list.appendChild(listItem);
+                }
+            }
+
+            // Append the list to the container แสดงข้อมูลที่ดึงมาจาก API ในหน้า login
+            responseContainer.appendChild(list);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+.fa-star{
+    color: #e4e6ed;
+}
+.fa-star:hover{
+    color: #fbc77f;    
+}
+#userRatingCLick:hover{
+    cursor: pointer;
+}
+#userRatingCtn{
+    position: fixed;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 45vh;
+    width: 40vh;
+    display: none;    
+}
+
+
+#confirmCon{
+    height: auto; 
+    width: 20vw; 
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 10px;
+}
+#closeConfirm{
+    border-radius: 5px;
+    background-color: #C97171;
+    border: none;
+    color: #fff;
+}
+#closeConfirm:hover{
+    background-color: #dc6464;
+}

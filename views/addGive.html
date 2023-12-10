@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Give</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="addGive.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="/home.html">
+            <img src="/img/img_home_01.png" alt="" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <div class="navbar-nav ">
+                <a class="nav-item nav-link " href="/home.html">Home</a>
+                <a class="nav-item nav-link " href="/SwapList.html">Swap</a>
+                <a class="nav-item nav-link " href="/GiveList.html">Giveaway</a>
+                <a class="navbar-brand" href="/profile.html">
+                    <img src="/img/img_home_02.png" alt="" class="img-fluid">
+                </a>                
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="topBackground"></div>
+    </div>
+    <div class="top container" id="topContainer">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12"><img src="/img/img_addGive_01.png" alt="" class="img-fluid" id="topImg1"></div>
+            <div class="col-lg-6 col-sm-12"><a href=""><img src="/img/img_addGive_02.png" alt="" class="img-fluid" id="topImg2"></a></div>            
+        </div>        
+    </div>
+    <div class="row" id="addSwapContainer">
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Product Name">
+                <img src="/img/img_addSwap_06.png" alt="" class="img-fluid">
+            </div>
+            <div class="mb-3">
+                <label for="inputState" class="form-label">Category</label>
+                <select id="inputState" class="form-select">
+                    <option selected>Choose Category</option>
+                    <option>Category1</option>
+                    <option>Category2</option>
+                    <option>Category3</option>
+                    <option>Category4</option>
+                </select>
+            </div>
+            
+            <div class="row mb-3">
+                <label for="quantity" class="col-lg-1 ">Condition:</label>
+                <input type="number" id="condition" name="condition" min="1" max="100" value="1" class="col-lg-2 col-sm-2">
+                <h3 class="col-lg-1">%</h3>
+            </div>
+
+            <span>Choose Interesting</span>
+            
+
+            <div class="row">
+                <span class="col-lg-2">Shipment :</span>
+                <div class="choseShipment form-check col--2"lg>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        pick up
+                    </label>
+                  </div>
+                  <div class="choseShipment form-check col-lg-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Ship to address
+                    </label>
+                  </div>
+            </div>            
+            
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="addDescription form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            
+
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="/img/img_addGive_03.png" alt="" class="img-fluid">                
+                </div>
+                <div class="col-sm-6">
+                    <img src="/img/img_addSwap_04.png" alt="" class="img-fluid">                
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="/img/img_addSwap_03.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-sm-3">
+                            <img src="/img/img_addSwap_03.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-sm-3">
+                            <img src="/img/img_addSwap_03.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-sm-3">
+                            <img src="/img/img_addSwap_03.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    
+            
+         
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="/home.js"></script>    
+  </body>
+</html>

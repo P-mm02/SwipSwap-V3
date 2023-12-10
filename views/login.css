@@ -1,0 +1,59 @@
+#loginLeft{
+    margin-top: 15vh;
+}
+#loginRight{
+    margin-left: 5vw;
+}
+#header{
+    font-weight: bold;
+    font-size: 70px;
+    color: #2B468B;
+}
+#loginLogo{
+    margin-top: 10vh;
+}
+#loginRight .top span{
+    color: #C9C9C9;
+    font-size: 30px;
+}
+#loginInput span{
+    margin-top: 2vh;
+    font-weight: bold;
+    font-size: 30px;
+    color: #2B468B;
+}
+#loginInput input{
+    width: 75%;
+    height: 50px;
+    border: 2px solid #99AFE2;
+    border-radius: 39px;
+}
+#loginInput button{
+    margin-top: 5vh;
+    width: 75%;
+    height: 50px;
+    border: 2px solid #99AFE2;
+    border-radius: 39px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+    background-color: #2B468B;
+}
+#register{
+    margin-top: 2vh;
+    width: 78%;
+    height: 50px;
+    border: 2px solid #99AFE2;
+    border-radius: 39px;
+    margin-left: -10px;
+    color: #2B468B;
+    font-weight: bold;
+    font-size: 25px;
+    background-color: #fff;
+}
+#forgetPass{
+    color: #99AFE2;
+    font-size: 20px;
+    position: absolute;
+    right: 11%;
+}
