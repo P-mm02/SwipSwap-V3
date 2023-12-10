@@ -3,37 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add Give</title>
+    <title>Add Swap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="addGive.css">
+    <link rel="stylesheet" href="addSwap.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <a class="navbar-brand" href="/home.html">
-            <img src="/img/img_home_01.png" alt="" class="img-fluid">
-        </a>
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <div class="navbar-nav ">
-                <a class="nav-item nav-link " href="/home.html">Home</a>
-                <a class="nav-item nav-link " href="/SwapList.html">Swap</a>
-                <a class="nav-item nav-link " href="/GiveList.html">Giveaway</a>
-                <a class="navbar-brand" href="/profile.html">
-                    <img src="/img/img_home_02.png" alt="" class="img-fluid">
-                </a>                
-            </div>
-        </div>
-    </nav>
+    <script src="nav2.js"></script>
+
     <div>
         <div class="topBackground"></div>
     </div>
     <div class="top container" id="topContainer">
         <div class="row">
-            <div class="col-lg-6 col-sm-12"><img src="/img/img_addGive_01.png" alt="" class="img-fluid" id="topImg1"></div>
-            <div class="col-lg-6 col-sm-12"><a href=""><img src="/img/img_addGive_02.png" alt="" class="img-fluid" id="topImg2"></a></div>            
+            <div class="col-lg-6 col-sm-12"><img src="/img/img_addSwap_01.png" alt="" class="img-fluid" id="topImg1"></div>
+            <div class="col-lg-6 col-sm-12"><a href=""><img src="/img/img_addSwap_02.png" alt="" class="img-fluid" id="topImg2"></a></div>            
         </div>        
     </div>
     <div class="row" id="addSwapContainer">
@@ -61,7 +47,38 @@
             </div>
 
             <span>Choose Interesting</span>
-            
+            <div class="row" id="choseInterest">
+                <div class="chooseInterest form-check col-lg-4">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Category1
+                    </label>                    
+                </div>
+                <div class="chooseInterest form-check col-lg-4">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Category2
+                    </label>
+                </div>
+                <div class="chooseInterest form-check col-lg-4">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Category3
+                    </label>
+                </div>
+                <div class="chooseInterest form-check col-lg-4">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Category4
+                    </label>
+                </div>
+                <div class="chooseInterest form-check col-lg-4">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Category5
+                    </label>
+                </div>
+            </div>
 
             <div class="row">
                 <span class="col-lg-2">Shipment :</span>
@@ -89,7 +106,7 @@
         <div class="col-sm-6">
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="/img/img_addGive_03.png" alt="" class="img-fluid">                
+                    <img src="/img/img_addSwap_05.png" alt="" class="img-fluid">                
                 </div>
                 <div class="col-sm-6">
                     <img src="/img/img_addSwap_04.png" alt="" class="img-fluid">                
@@ -117,6 +134,8 @@
             
          
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="/home.js"></script>    
+    <script src="/home.js"></script> 
+    <script src="nav2.js"></script>
+   
   </body>
 </html>

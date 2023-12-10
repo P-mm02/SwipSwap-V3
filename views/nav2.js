@@ -1,9 +1,9 @@
 $(function(){
-    $("#navigation").load("nav2.html");    
+    $("#navigation").load("nav2.ejs");    
     $("body").css("margin-top", 200 + "px");
 });
 $(function(){
-    $("#profileWindow").load("profileWindow.html"); 
+    $("#profileWindow").load("profileWindow.ejs"); 
 });
 
 

@@ -115,7 +115,7 @@ document.getElementById('star5').addEventListener('click', function() {
         unacceptBtn.style.display = 'none';
         IsReceived.style.display = 'block';
         confirmCon.style.display = 'none';
-        window.location.href = '/home.html';
+        window.location.href = '/home.ejs';
     }
     closeConfirm.onclick = function() {                
       confirmCon.style.display = 'none';      
@@ -133,7 +133,7 @@ document.getElementById('star5').addEventListener('click', function() {
         confirmCon.style.display = 'none';
         userRatingCtn.style.display = 'block';
         confirmStar.onclick = function(){        
-        window.location.href = '/home.html';
+        window.location.href = '/home.ejs';
         }
     }
     closeConfirm.onclick = function() {                
@@ -164,7 +164,7 @@ document.getElementById('star5').addEventListener('click', function() {
         confirmStar.textContent = 'Report';
         userRatingCtn.style.display = 'block';
         confirmStar.onclick = function(){        
-        window.location.href = '/home.html';
+        window.location.href = '/home.ejs';
         }
     }
     closeConfirm.onclick = function() {                

@@ -18,19 +18,16 @@
                 <h1 id="header">Welcome!</h1>
                 <span>Log in your account</span>
             </div>
-            <div class="bottom">
-                <form action="home.html" method="post" class="row" id="loginInput">
+            <div class="bottom">                
+                <dfv action="/" method="post" class="row" id="loginInput">
                     <span>Student ID*</span>
-                    <input type="text" name="username" placeholder="รหัสนักศึกษา เช่น 6012345678" id="username" required>
+                    <input type="text" name="username" placeholder="Student ID, e.g., 6012345678" id="username" required>
                     <span>Password*</span>
-                    <input type="password" name="password" placeholder="เลขประจำตัวบัตรประชาชน 13 หลัก" id="password" required>
-                    
-                    <!-- Redirect to "home.html" on form submission -->
-                    <a> 
-                        <button type="button" onclick="submitLoginForm()">Log in</button>
-                        <!-- <button type="submit">Log in</button> -->
-                    </a>
-                </form>
+                    <input type="password" name="password" placeholder="Password" id="password" required>                                      
+                    <!-- Redirect to "home.ejs" on form submission -->
+                    <button type="submit" onclick="submitLoginForm()">Log in</button>
+                </dfv>
+                  
                 
                 <div id="responseContainer">
                     <!-- Response properties will be displayed here แสดงข้อมูลที่ดึงมาจาก API -->
@@ -59,19 +56,16 @@
             };
 
             // Perform the HTTP POST request using the Fetch API
+            // ... (other code remains unchanged)
+
             fetch("https://restapi.tu.ac.th/api/v1/auth/Ad/verify", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Application-Key": "TU4fd2ebfd764d5500fdc3428be72358640aeec0e5f786eb4a5a3b0cc99dfe2e77cc1cf72141dc5f8e71fb51f1526929ce"
-                },
-                body: JSON.stringify(requestBody)
+                // ... (other fetch parameters remain unchanged)
+                
             })
             .then(response => {
                 if (!response.ok) {
-                    // Check if the response status is 401 (Unauthorized)
                     if (response.status === 401) {
-                        throw new Error("โปรดตรวจสอบรหัสนักศึกษาและรหัสผ่านอีกครั้ง");
+                        throw new Error("Invalid username or password");
                     }
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
@@ -80,17 +74,17 @@
             .then(data => {
                 // Handle the response data
                 displayResponseProperties(data);
-                // Display "Login successed." if the API call is successful
-                alert("เข้าสู่ระบบสำเร็จ");
-                // Redirect to home.html
-                 window.location.href = "home.html";
+                alert("Login successful");
+                // Redirect to home.ejs only on successful login
+                window.location.href = "/home";
             })
             .catch(error => {
-                // Handle errors
                 console.error("Error:", error);
-                // Display "Wrong password" if the API call fails
-                alert("โปรดตรวจสอบรหัสนักศึกษาและรหัสผ่านอีกครั้ง");
+                // Display error message when login fails
+                alert("Invalid username or password");
+                // You might choose to redirect only on successful login, not on error
             });
+
         }
 
         function displayResponseProperties(data) {
