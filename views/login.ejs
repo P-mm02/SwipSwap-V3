@@ -45,7 +45,7 @@
 
             // Check if username or password is not provided
             if (username.trim() === "" || password.trim() === "") {
-                alert("โปรดกรอกรหัสนักศึกษาและรหัสผ่านให้ครบถ้วน ก่อนเข้าสู่ระบบ");
+                alert("Please fill in your student ID and password completely");
                 return;
             }
 
@@ -59,7 +59,12 @@
             // ... (other code remains unchanged)
 
             fetch("https://restapi.tu.ac.th/api/v1/auth/Ad/verify", {
-                // ... (other fetch parameters remain unchanged)
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Application-Key": "TU4fd2ebfd764d5500fdc3428be72358640aeec0e5f786eb4a5a3b0cc99dfe2e77cc1cf72141dc5f8e71fb51f1526929ce"
+                },
+                body: JSON.stringify(requestBody)
                 
             })
             .then(response => {

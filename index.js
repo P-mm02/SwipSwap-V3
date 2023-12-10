@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   console.log('req SwipSwap')
   res.render('login')
 });
-app.post('/home', (req, res) => {
+app.get('/home', (req, res) => {
   // Process form data here
   // For example: Retrieve form data from req.body
 
