@@ -24,7 +24,7 @@
                     <input type="text" name="username" placeholder="Student ID, e.g., 6012345678" id="username" required>
                     <span>Password*</span>
                     <input type="password" name="password" placeholder="Password" id="password" required>                                      
-                    <!-- Redirect to "home.ejs" on form submission -->
+                    <!-- Redirect to "home" on form submission -->
                     <button type="submit" onclick="submitLoginForm()">Log in</button>
                 </dfv>
                   
@@ -80,7 +80,7 @@
                 // Handle the response data
                 displayResponseProperties(data);
                 alert("Login successful");
-                // Redirect to home.ejs only on successful login
+                // Redirect to home only on successful login
                 window.location.href = "/home";
             })
             .catch(error => {

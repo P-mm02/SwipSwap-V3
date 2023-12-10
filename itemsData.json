@@ -1,0 +1,49 @@
+{
+    "item1": {
+        "_id": {
+            "$oid": "6462af6e358b31d5d75a17df"
+        },
+        "regisTime": "16/5/2023 5:17:18",
+        "name": "aaaaaaaaa",
+        "gameName": "bbbbbbb",
+        "price": [
+            {
+                "p1":"cccccc",
+                "p2":"88888888",
+                "p3":"77777777"
+            },
+            {
+                "p1":"qqqqqqqqqqq",
+                "p2":"83333333333338",
+                "p3":"7jjjj7"
+            },
+            {
+                "p1":"vvvvvv",
+                "p2":"bbbbbbbbb",
+                "p3":"111111"
+            }
+        ] ,
+        "id": "dddddd",
+        "password": "eeeeee",
+        "e-mail": "fffff",
+        "address": "gggggggggg",
+        "img1": "/img/items/img_itemInfo_offer_03.png",
+        "img2": "cccccccc"
+    },
+
+    "item2": {
+        "_id": {
+            "$oid": "64757df3968877cc91e2ee93"
+          },
+          "regisTime": "30/5/2023 11:39:15",
+          "name": "test1122",
+          "gameName": "test1122",
+          "price": "test1122",
+          "id": "test1122",
+          "password": "test1122",
+          "e-mail": "test1122",
+          "address": "0xc7e850ba3a0e05d386211ee1ee5c00508eb9376d",
+          "img1": "03.jpg",
+          "img2": "06.jpg"
+    }
+}
