@@ -26,7 +26,7 @@
     margin-left: 40px;
 }
 #choseInterest{
-    margin-left: 40px;
+    margin-left: 20px;
 }
 .choseShipment{
     margin-left: 40px;
@@ -35,7 +35,7 @@
     border: 2px solid #FBB77F;
     border-radius: 10px;
     margin: 0 0 10px 10px;
-    width: 130px;
+    width: 135px;
 }
 .chooseInterest .form-check-input{
     margin-left: -10px;
@@ -46,4 +46,8 @@
 }
 .addDescription{
     border-color: #8BA2E0;
+}
+
+#addSwapAddImg1,#addSwapAddImg2,#addSwapAddImg3,#addSwapAddImg4,#addSwapAddImg5:hover{
+    cursor: pointer;
 }

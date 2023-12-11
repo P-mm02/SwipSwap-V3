@@ -81,7 +81,7 @@
                 displayResponseProperties(data);
                 alert("Login successful");
                 // Redirect to home only on successful login
-                window.location.href = "/home";
+                window.location.href = "/profile";
             })
             .catch(error => {
                 console.error("Error:", error);
@@ -113,8 +113,9 @@
             }
 
             // Append the list to the container แสดงข้อมูลที่ดึงมาจาก API ในหน้า login
-            responseContainer.appendChild(list);
+            // responseContainer.appendChild(list);
         }
+        
     </script>
 </body>
 </html>
