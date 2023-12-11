@@ -19,14 +19,14 @@
                 <span>Log in your account</span>
             </div>
             <div class="bottom">                
-                <dfv action="/" method="post" class="row" id="loginInput">
+                <form action="/login/send" method="post" class="row" id="loginInput">
                     <span>Student ID*</span>
                     <input type="text" name="username" placeholder="Student ID, e.g., 6012345678" id="username" required>
                     <span>Password*</span>
                     <input type="password" name="password" placeholder="Password" id="password" required>                                      
                     <!-- Redirect to "home" on form submission -->
                     <button type="submit" onclick="submitLoginForm()">Log in</button>
-                </dfv>
+                </form>
                   
                 
                 <div id="responseContainer">

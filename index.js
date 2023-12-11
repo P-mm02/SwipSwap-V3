@@ -12,6 +12,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'views/img')));
+app.use(express.urlencoded({ extended: true }));
 
 
 // Define a route
@@ -22,11 +23,14 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
   res.render('login')
 });
+app.post('/login/send', (req, res) => {
+  const {username, password} = req.body;
+  console.log(username,password)
+});
+
 app.get('/home', (req, res) => {
   // Process form data here
   // For example: Retrieve form data from req.body
-
-  // Render the home.ejs file as a response
   res.render('home');
 });
 app.get('/SwapList', (req, res) => {
@@ -45,8 +49,7 @@ app.get('/profileWindow', (req, res) => {
   res.render('profileWindow')
 });
 app.get('/profile', (req, res) => {
-  const fileName = req.path.split('/').pop();
-  res.render('profile', { url: req.originalUrl })
+  res.render('profile')
 });
 app.get('/profile-swap', (req, res) => {
   res.render('profile-swap')
