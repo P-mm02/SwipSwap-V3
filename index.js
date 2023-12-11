@@ -6,6 +6,8 @@ const path = require('path');
 const itemsData = require('./itemsData.json');
 const { constants } = require('buffer');
 const { name } = require('ejs');
+const methodOverride = require('method-override')
+const mongoose =require('mongoose')
 
 // Setting the view engine and views directory for EJS
 app.set('view engine', 'ejs');
@@ -13,7 +15,66 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'views/img')));
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'))
 
+
+// mongoose.connect('mongodb://127.0.0.1:27017/test');
+// const db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   console.log('Connected to the SwipSwap database!!!');// });
+
+const uri = 'mongodb+srv://sirwst:swipswap@cluster0.2ma9qhw.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(uri)
+  .then(() => {
+    console.log('Connected to the SwipSwap database!!!');
+  })
+  .catch((err) => {
+    console.error('Error connecting to MongoDB:', err.message);
+  });
+
+
+const itemsDB = new mongoose.Schema({
+  nameOwner: String,
+  nameItem: String,
+  ratingOwner: Number,
+  condition: Number,
+  shipment: String,
+  interesting: [String],
+  category: String,
+  description: String,
+  date: {
+    type: Date,
+    default: Date.now // Setting the default value to the current date and time when a document is created
+  },
+  img: String
+})
+
+
+const items = mongoose.model('items', itemsDB);
+const newItem = new items({
+  nameOwner: 'String',
+  nameItem: 'String',
+  ratingOwner: 'Number',
+  condition: 'Number',
+  shipment: 'String',
+  interesting: ['String','String','String'],
+  category: 'String',
+  description: 'String',
+  date: {
+    type: Date,
+    default: Date.now // Setting the default value to the current date and time when a document is created
+  },
+  img: 'String'
+})
+
+// items.createCollection()
+  // .then(savedItem => {
+  //   console.log('Item saved:', savedItem);
+  // })
+  // .catch(err => {
+  //   console.error('Error saving item:', err);
+  // });
 
 // Define a route
 app.get('/', (req, res) => {
@@ -24,8 +85,8 @@ app.get('/login', (req, res) => {
   res.render('login')
 });
 app.post('/login/send', (req, res) => {
-  const {username, password} = req.body;
-  console.log(username,password)
+  const {username} = req.body;
+  console.log(username)
 });
 
 app.get('/home', (req, res) => {
