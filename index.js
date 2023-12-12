@@ -308,7 +308,7 @@ app.post('/addSwap/makelist', (req, res) => {
 });
 
   // console.log(inputItemName,inputCategory,inputCondition,interest,inputShipment,inputDescription,inputImg2,inputImg5,inputImg6)
-  res.render('')
+  res.render('addSwap')
 });
 app.get('/addGive', (req, res) => {
   res.render('addGive')
