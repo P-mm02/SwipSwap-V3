@@ -45,7 +45,7 @@
                         <div class="col-3">
                             <h4 class="mt-3" style="color: #2B468B;">Apple Watch 2.0</h4>
                             <h5 style="color: #2B468B;">Owner : Kanin.sua </h5>
-                            <h5 style="color: #2B468B;">Category : Game </h5>
+                            <h5 style="color: #2B468B;">Category : Electronic </h5>
                             <h5 style="color: #2B468B;">Condition : 75% </h5>
                             <h5 style="color: #2B468B;">Shipment : pick up </h5>
                         </div>                        
@@ -74,6 +74,47 @@
                         </div>                        
                         
                     </div>
+
+                    <% profile_History_Swap_MyItems.forEach((profile_History_Swap_MyItems, index) => { %>
+                        <div class="row buttomLine2">          
+                        
+                        <div class="col-2 d-flex align-items-center justify-content-center">
+                            <img src="/img/uploads/<%= profile_History_Swap_MyItems.img2 %>" alt="" class="mt-3 mb-3 img-fluid">
+                        </div>
+                        <div class="col-3">
+                            <h4 class="mt-3" style="color: #2B468B;"><%= profile_History_Swap_MyItems.nameItem %></h4>
+                            <h5 style="color: #2B468B;">Owner : <%= profile_History_Swap_MyItems.nameOwner %> </h5>
+                            <h5 style="color: #2B468B;">Category : <%= profile_History_Swap_MyItems.category %> </h5>
+                            <h5 style="color: #2B468B;">Condition : <%= profile_History_Swap_MyItems.condition %>% </h5>
+                            <h5 style="color: #2B468B;">Shipment : <%= profile_History_Swap_MyItems.shipment %> </h5>
+                        </div>                        
+                        <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
+                            <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
+                            <img src="/img/uploads/<%= profile_History_Swap_TargetItems[index].img2 %>" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-3">
+                            <h4 class="mt-3" style="color: #2B468B;"><%= profile_History_Swap_TargetItems[index].nameItem %></h4>
+                            <h5 style="color: #2B468B;">Owner : <%= profile_History_Swap_TargetItems[index].nameOwner %> </h5>
+                            <h5 style="color: #2B468B;">Category : <%= profile_History_Swap_TargetItems[index].category %> </h5>
+                            <h5 style="color: #2B468B;">Condition : <%= profile_History_Swap_TargetItems[index].condition %>% </h5>
+                            <h5 style="color: #2B468B;">Shipment : <%= profile_History_Swap_TargetItems[index].shipment %> </h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9"></div>
+                            <div class="col-md-3 mb-3 mt-3 d-flex align-items-center justify-content-end">
+                                <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
+                                <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
+                                <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
+                                <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
+                                <i class="fa-solid fa-star" style="color: #e4e6ed; font-size: 30px;" ></i>
+                            </div>
+                        </div>                        
+                        
+                    </div>
+                    <% }); %>
+                    
                 </div>
                 <div class="col-11 mt-5" id="editProfileList" style="display: none; background-color: #fff;">
                     <div class="row buttomLine2">          
@@ -83,14 +124,14 @@
                         </div>
                         <div class="col-5 mt-5">
                             <h4 class="mt-3" style="color: #2B468B;">Care bare blue</h4>
-                            <h5 style="color: #2B468B;">Category : Game </h5>
+                            <h5 style="color: #2B468B;">Category : Enjoyment </h5>
                             <h5 style="color: #2B468B;">Condition : 75% </h5>
                             <h5 style="color: #2B468B;">Shipment : pick up </h5>
                         </div>                        
                         
                         <div class="col-5 mt-5" style="border-left: 1px solid #AFAFAF;">
-                            <h5 style="color: #2B468B;" class="mt-5">Owner : Sasiwimol.rue </h5>                            
-                            <h5 style="color: #2B468B;">Recipient : Moo.moo </h5>
+                            <h5 style="color: #2B468B;" class="mt-5">Owner : Kanin Sonbankoh </h5>                            
+                            <h5 style="color: #2B468B;">Recipient :  Sasiwimol Rueangwongsatorn</h5>
                         </div>
                         <div class="row">
                             <div class="col-md-9"></div>
@@ -104,34 +145,36 @@
                         </div>                        
                         
                     </div>
-                    <div class="row buttomLine2">          
+                    <% profile_History_Give_MyItems.forEach((profile_History_Give_MyItems, index) => { %>
+                        <div class="row buttomLine2">          
                         
-                        <div class="col-2 d-flex align-items-center justify-content-center mt-5">
-                            <img src="/img/profile/profile-history/profile_favorite_02.jpeg" alt="" class="mt-3 mb-3 img-fluid">
-                        </div>
-                        <div class="col-5 mt-5">
-                            <h4 class="mt-3" style="color: #2B468B;">Care bare purple</h4>
-                            <h5 style="color: #2B468B;">Category : Game </h5>
-                            <h5 style="color: #2B468B;">Condition : 75% </h5>
-                            <h5 style="color: #2B468B;">Shipment : pick up </h5>
-                        </div>                        
-                        
-                        <div class="col-5 mt-5" style="border-left: 1px solid #AFAFAF;">
-                            <h5 style="color: #2B468B;" class="mt-5">Owner : Sasiwimol.rue </h5>                            
-                            <h5 style="color: #2B468B;">Recipient : Moo.moo </h5>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-9"></div>
-                            <div class="col-md-3 mb-3 mt-3 d-flex align-items-center justify-content-end">
-                                <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
-                                <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
-                                <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
-                                <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
-                                <i class="fa-solid fa-star" style="color: #e4e6ed; font-size: 30px;" ></i>
+                            <div class="col-2 d-flex align-items-center justify-content-center mt-5">
+                                <img src="/img/uploads/<%= profile_History_Give_MyItems.img2 %>" alt="" class="mt-3 mb-3 img-fluid">
                             </div>
-                        </div>                        
-                        
-                    </div>
+                            <div class="col-5 mt-5">
+                                <h4 class="mt-3" style="color: #2B468B;"><%= profile_History_Give_MyItems.nameItem %></h4>
+                                <h5 style="color: #2B468B;">Category : <%= profile_History_Give_MyItems.category %> </h5>
+                                <h5 style="color: #2B468B;">Condition : <%= profile_History_Give_MyItems.condition %>% </h5>
+                                <h5 style="color: #2B468B;">Shipment : <%= profile_History_Give_MyItems.shipment %> </h5>
+                            </div>                        
+                            
+                            <div class="col-5 mt-5" style="border-left: 1px solid #AFAFAF;">
+                                <h5 style="color: #2B468B;" class="mt-5">Owner : <%= profile_History_Give_MyItems.nameOwner %> </h5>                            
+                                <h5 style="color: #2B468B;">Recipient :  <%= profile_History_Give_TargetOfferor.name %></h5>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9"></div>
+                                <div class="col-md-3 mb-3 mt-3 d-flex align-items-center justify-content-end">
+                                    <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
+                                    <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
+                                    <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
+                                    <i class="fa-solid fa-star" style="color: #fbc77f; font-size: 30px;" ></i>
+                                    <i class="fa-solid fa-star" style="color: #e4e6ed; font-size: 30px;" ></i>
+                                </div>
+                            </div>                        
+                            
+                        </div>
+                    <% }); %>
                 </div>
             </div>
         </div>        

@@ -8,7 +8,7 @@ body{
     padding-left: 2vw;
     font-size: 30px;
     padding-right: 2vw;
-    padding-bottom: 3vh;
+    /* padding-bottom: 3vh; */
     z-index: 2;
 }
 .nav-item{
@@ -75,12 +75,12 @@ body{
     
 }
 
-.hotSwap{
+.hotSwap,.hotGive{
     
     width: 445px;
     height: 448px;    
 }
-.hotSwap:hover{
+.hotSwap:hover,.hotGive:hover{
     border: 2px solid #8BA2E0;
     cursor: pointer;   
 }
@@ -108,6 +108,12 @@ body{
     color: #213360;
 
 }
+
+.itemOwnerName{
+    font-size: 22px;
+    color: #213360;
+}
+
 .itemLookingEdit{
     font-size: 22px;
     color: #213360;
@@ -119,25 +125,7 @@ body{
 
 }
 
-.itemInfo{
-    width:1200px;
-    height: 756px;
-    background-color: #fff;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 18px;
-    visibility: hidden;
-    z-index: 9999;
-    border: 1px solid#707070;
-}
-@media screen and (max-width: 1200px) {
-    .itemInfo {
-    width: 90vw;
-    height: auto;      
-    }
-}
+
 
 .leftLine{
     border-left: 1px solid #AFAFAF;
@@ -153,43 +141,5 @@ body{
     margin-left: 1vw;
 }
 
-.interestingList{
-    margin-left: 2vw;
-    border: 1px solid #AFAFAF;
-    border-radius: 19px;
-    padding: 7px 20px 7px 20px;
-}
 
-#itemInfo-clickBack{
-    position: absolute;
-    top: -50px;    
-}
-#itemInfo-clickBack:hover{
-    cursor: pointer;
-    background-color: #213360;
-    border-radius: 18px;
-    padding: 0 10px 0 10px;
-}
-
-#offerWindow{
-    width: 600px;
-    height: 600px;
-    background-color: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border-radius: 18px;
-    visibility: hidden;
-    border: 1px solid#707070;    
-    text-align: center;
-    align-items: center;
-}
-#infoPath1{
-    text-decoration: none; color: black;
-}
-#infoPath1:hover{
-    color: #707070;
-}
 

@@ -1,0 +1,71 @@
+<div class="container">
+  
+  
+  <div class="dropdown" style="margin-left: -100px;">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #8BA2E0; font-weight: 500;">
+    PRODUCT FILTERS
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+      <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" >
+        <input type="checkbox" class="btn-check" id="HideMyProduct" autocomplete="off">
+        <label class="btn btn-outline-primary" for="HideMyProduct" style="font-weight: 500;">Hide my Product</label>
+      
+        <input type="checkbox" class="btn-check" id="Electronic" autocomplete="off">
+        <label class="btn btn-outline-primary" for="Electronic" style="font-weight: 500;">Electronic</label>
+      
+        <input type="checkbox" class="btn-check" id="Enjoyment" autocomplete="off">
+        <label class="btn btn-outline-primary" for="Enjoyment" style="font-weight: 500;">Enjoyment</label>
+
+        <input type="checkbox" class="btn-check" id="Education" autocomplete="off">
+        <label class="btn btn-outline-primary" for="Education" style="font-weight: 500;">Education</label>
+      
+        <input type="checkbox" class="btn-check" id="Fashion" autocomplete="off">
+        <label class="btn btn-outline-primary" for="Fashion" style="font-weight: 500;">Fashion</label>
+      
+        <input type="checkbox" class="btn-check" id="Furniture" autocomplete="off">
+        <label class="btn btn-outline-primary" for="Furniture" style="font-weight: 500;">Furniture</label>
+
+        <input type="checkbox" class="btn-check" id="General" autocomplete="off">
+        <label class="btn btn-outline-primary" for="General" style="font-weight: 500;">General</label>
+      </div>
+    </ul>
+  </div>
+    
+
+
+    <div class="row">
+      <div class="col-md-6 offset-md-3"  >
+        <div class="input-group search-bar" id="searchBarCon">
+          <input type="text" class="form-control" placeholder="Search..." style="border: none; border-radius: 45px; border-top-right-radius: 0%; border-bottom-right-radius: 0%;">
+          <div class="input-group-append">
+            <button id="searchBarBtn" class="btn btn-outline-secondary" type="button" style="background-color: #fff; border: none; border-radius: 45px; border-bottom-left-radius: 0%; border-top-left-radius: 0%;">
+                <img src="/img/img_home_05.png" alt="">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<style>
+    .search-bar {
+      max-width: 709px;
+      height: 81px;
+      margin: 20px auto;
+      position: fixed;
+      top: 350px;
+      z-index: 9999;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+    }
+    #searchBarBtn {
+        height: 81px;
+        width: 81px;
+        
+    }    
+</style>
+
+<script>document.getElementById("dropdownMenuButton1").addEventListener("mouseenter", function() {
+  this.click();
+});
+</script>

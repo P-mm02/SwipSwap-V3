@@ -57,3 +57,8 @@
 .editProfileInput input , textarea{
     margin-top: 10px;
 }
+
+.itemInfoActive:hover{
+    cursor: pointer;
+    
+}

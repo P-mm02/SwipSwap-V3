@@ -5,27 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="/home.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   </head>
   <body>
-    <div id="navigation"></div>
-    
-    <div>
-        <div class="topBackground"></div>
-    </div>
-     
-    
-    <div  id="container-down">    
+    <%- include('nav1.ejs') %>
 
+    <div  id="container-down"> 
+    
+    <!--แสดงข้อมูลสิ่งของแต่ละกรอบของ swap-->
     <div class="hotForSwap">
         <img src="/img/img_home_09.png" alt="" id="">
         <div class="row hotSwapCon">
-            <div class="col-4 hotSwap shadow rounded mt-3">
+            <div class="col-4 hotSwap shadow rounded mt-3" style="display: none;">
                 <div class="row ">
+                    <span class="swapGiveIndex" style="display: none;"></span>
                     <div class="col-2">
-    
                     </div>
                     <div class="col-8 d-flex justify-content-center ">
                         <img src="/img/items/img_item_02.png" alt="">
@@ -45,544 +41,190 @@
                     <div class="col-12">
                         <span class="itemLookingEdit">Looking for : </span>
                         <button class="btn-looking ">
-                            <span>Beauty</span>                        
-                        </button>
-                        <button class="btn-looking">
                             <span>Electronic</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Game</span>                        
                         </button>
                     </div>
                 </div>
-    
-    
-              </div>
-              <div class="col-4 hotSwap shadow rounded mt-3">
-                <div class="row ">
-                    <div class="col-2">
-    
-                    </div>
-                    <div class="col-8 d-flex justify-content-center ">
-                        <img src="/img/items/img_item_02.png" alt="">
-                    </div>
-                    <div class="col-2 mt-3 ">
-                        <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                    </div>
-                    <div class="col-12 d-flex justify-content-center mt-3">
-                        <img src="/img/items/img_item_01.png" alt="" >
-                    </div>
-                    <div class="col-12 d-flex justify-content-center itemNameEdit">
-                        <span>Apple Airpods gen3</span>
-                    </div>
-                    <div class="col-12 itemConditionEdit">
-                        <span>Condition : </span><span class="conditionDp">80%</span>
-                    </div>
-                    <div class="col-12">
-                        <span class="itemLookingEdit">Looking for : </span>
-                        <button class="btn-looking ">
-                            <span>Beauty</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Electronic</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Game</span>                        
-                        </button>
-                    </div>
-                </div>
-    
-    
-              </div>
-              <div class="col-4 hotSwap shadow rounded mt-3">
-                <div class="row ">
-                    <div class="col-2">
-    
-                    </div>
-                    <div class="col-8 d-flex justify-content-center ">
-                        <img src="/img/items/img_item_02.png" alt="">
-                    </div>
-                    <div class="col-2 mt-3 ">
-                        <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                    </div>
-                    <div class="col-12 d-flex justify-content-center mt-3">
-                        <img src="/img/items/img_item_01.png" alt="" >
-                    </div>
-                    <div class="col-12 d-flex justify-content-center itemNameEdit">
-                        <span>Apple Airpods gen3</span>
-                    </div>
-                    <div class="col-12 itemConditionEdit">
-                        <span>Condition : </span><span class="conditionDp">80%</span>
-                    </div>
-                    <div class="col-12">
-                        <span class="itemLookingEdit">Looking for : </span>
-                        <button class="btn-looking ">
-                            <span>Beauty</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Electronic</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Game</span>                        
-                        </button>
+            </div>
+            <!--ดึงข้อมูลสิ่งของ swap จาก database ออกมาแสดง-->            
+            <% swapList.forEach((swapList,index) => { %>
+                <div class="col-4 hotSwap shadow rounded mt-3">
+                    <div class="row ">
+                        <span id="swapGiveIndex" style="display: none;"><%= index %></span>
+                        <span id="swapGiveInfoId<%= index %>" style="display: none;"><%= swapList._id %></span>
+                        <span id="swapGiveInfoItemName<%= index %>" style="display: none;"><%= swapList.nameItem %></span>
+                        <span id="swapGiveInfoCategory<%= index %>" style="display: none;"><%= swapList.category %></span>
+                        <span id="swapGiveInfoCondition<%= index %>" style="display: none;"><%= swapList.condition %></span>
+                        <span id="swapGiveInfoShipment<%= index %>" style="display: none;"><%= swapList.shipment %></span>
+                        <span id="swapGiveInfoInteresting<%= index %>" style="display: none;"><%= swapList.interesting %></span>
+                        <span id="swapGiveInfoDescription<%= index %>" style="display: none;"><%= swapList.description %></span>
+                        <span id="swapGiveInfoOwnerName<%= index %>" style="display: none;"><%= swapList.nameOwner %></span>
+                        <span id="swapGiveInfoOwnerRating<%= index %>" style="display: none;"><%= swapList.ratingOwner %></span>
+                        <span id="swapGiveInfoImg2<%= index %>" style="display: none;"><%= swapList.img2 %></span>
+
+                        <div class="col-2">
+                        </div>
+                        <div class="col-8 d-flex justify-content-center ">
+                            <img src="/img/items/img_item_02.png" alt="">
+                        </div>
+                        <div class="col-2 mt-3 ">
+                            <!-- <img src="/img/items/img_item_03.png" alt=""> -->
+                        </div>
+                        
+                        <div class="col-12 d-flex justify-content-center mt-2">
+                            <img src="/img/uploads/<%= swapList.img2 %>" alt="" class="img-fluid"  style="height: 260px; width: 260px;">                           
+                        </div>
+                        <div class="col-12 d-flex justify-content-center itemNameEdit">
+                            <span><%= swapList.nameItem %></span>
+                        </div>
+                        <div class="col-12 itemConditionEdit">
+                            <span>Condition : </span><span class="conditionDp"><%= swapList.condition %>%</span>
+                        </div>
+                        <div class="col-12">
+                            <span class="itemLookingEdit">Looking for : </span>
+                            <button class="btn-looking ">
+                                <span><%= swapList.interesting %></span>                        
+                            </button>
+                        </div>
                     </div>
                 </div>
-    
-    
-              </div>
-              <div class="col-4 hotSwap shadow rounded mt-3">
-                <div class="row ">
-                    <div class="col-2">
-    
-                    </div>
-                    <div class="col-8 d-flex justify-content-center ">
-                        <img src="/img/items/img_item_02.png" alt="">
-                    </div>
-                    <div class="col-2 mt-3 ">
-                        <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                    </div>
-                    <div class="col-12 d-flex justify-content-center mt-3">
-                        <img src="/img/items/img_item_01.png" alt="" >
-                    </div>
-                    <div class="col-12 d-flex justify-content-center itemNameEdit">
-                        <span>Apple Airpods gen3</span>
-                    </div>
-                    <div class="col-12 itemConditionEdit">
-                        <span>Condition : </span><span class="conditionDp">80%</span>
-                    </div>
-                    <div class="col-12">
-                        <span class="itemLookingEdit">Looking for : </span>
-                        <button class="btn-looking ">
-                            <span>Beauty</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Electronic</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Game</span>                        
-                        </button>
-                    </div>
-                </div>
-    
-    
-              </div>
-              <div class="col-4 hotSwap shadow rounded mt-3">
-                <div class="row ">
-                    <div class="col-2">
-    
-                    </div>
-                    <div class="col-8 d-flex justify-content-center ">
-                        <img src="/img/items/img_item_02.png" alt="">
-                    </div>
-                    <div class="col-2 mt-3 ">
-                        <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                    </div>
-                    <div class="col-12 d-flex justify-content-center mt-3">
-                        <img src="/img/items/img_item_01.png" alt="" >
-                    </div>
-                    <div class="col-12 d-flex justify-content-center itemNameEdit">
-                        <span>Apple Airpods gen3</span>
-                    </div>
-                    <div class="col-12 itemConditionEdit">
-                        <span>Condition : </span><span class="conditionDp">80%</span>
-                    </div>
-                    <div class="col-12">
-                        <span class="itemLookingEdit">Looking for : </span>
-                        <button class="btn-looking ">
-                            <span>Beauty</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Electronic</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Game</span>                        
-                        </button>
-                    </div>
-                </div>
-    
-    
-              </div>
-              <div class="col-4 hotSwap shadow rounded mt-3">
-                <div class="row ">
-                    <div class="col-2">
-    
-                    </div>
-                    <div class="col-8 d-flex justify-content-center ">
-                        <img src="/img/items/img_item_02.png" alt="">
-                    </div>
-                    <div class="col-2 mt-3 ">
-                        <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                    </div>
-                    <div class="col-12 d-flex justify-content-center mt-3">
-                        <img src="/img/items/img_item_01.png" alt="" >
-                    </div>
-                    <div class="col-12 d-flex justify-content-center itemNameEdit">
-                        <span>Apple Airpods gen3</span>
-                    </div>
-                    <div class="col-12 itemConditionEdit">
-                        <span>Condition : </span><span class="conditionDp">80%</span>
-                    </div>
-                    <div class="col-12">
-                        <span class="itemLookingEdit">Looking for : </span>
-                        <button class="btn-looking ">
-                            <span>Beauty</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Electronic</span>                        
-                        </button>
-                        <button class="btn-looking">
-                            <span>Game</span>                        
-                        </button>
-                    </div>
-                </div>
-    
-    
-              </div>
+            <% }); %>
         </div>
     </div>
+
+    <!--แสดงข้อมูลสิ่งของแต่ละกรอบของ giveaway-->
 
     <div class="hotForGive">
         <img src="/img/img_home_10.png" alt="" id="">
         <div class="row hotSwapCon">
-            <div class="col-4 hotSwap shadow rounded mt-3">
+            <div class="col-4 hotGive shadow rounded mt-3" style="display: none;">
               <div class="row ">
-                  <div class="col-2">
-  
+                <span class="swapGiveIndex" style="display: none;"></span>
+                  <div class="col-2">  
                   </div>
                   <div class="col-8 d-flex justify-content-center ">
-                      <img src="/img/items/img_item_02.png" alt="">
+                      <img src="/img/items/img_item_05.png" alt="">
                   </div>
                   <div class="col-2 mt-3 ">
-                      <img src="/img/items/img_item_03.png" alt="">
+                      <!-- <img src="/img/items/img_item_03.png" alt=""> -->
                   </div>
-                  <div class="col-12 d-flex justify-content-center mt-3">
-                      <img src="/img/items/img_item_01.png" alt="" >
-                  </div>
-                  <div class="col-12 d-flex justify-content-center itemNameEdit">
-                      <span>Apple Airpods gen3</span>
-                  </div>
-                  <div class="col-12 itemConditionEdit">
-                      <span>Condition : </span><span class="conditionDp">80%</span>
-                  </div>
-                  <div class="col-12">
-                      <span class="itemLookingEdit">Looking for : </span>
-                      <button class="btn-looking ">
-                          <span>Beauty</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Electronic</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Game</span>                        
-                      </button>
-                  </div>
-              </div>
-  
-  
-            </div>
-            <div class="col-4 hotSwap shadow rounded mt-3">
-              <div class="row ">
-                  <div class="col-2">
-  
-                  </div>
-                  <div class="col-8 d-flex justify-content-center ">
-                      <img src="/img/items/img_item_02.png" alt="">
-                  </div>
-                  <div class="col-2 mt-3 ">
-                      <img src="/img/items/img_item_03.png" alt="">
-                  </div>
-                  <div class="col-12 d-flex justify-content-center mt-3">
-                      <img src="/img/items/img_item_01.png" alt="" >
-                  </div>
-                  <div class="col-12 d-flex justify-content-center itemNameEdit">
-                      <span>Apple Airpods gen3</span>
-                  </div>
-                  <div class="col-12 itemConditionEdit">
-                      <span>Condition : </span><span class="conditionDp">80%</span>
-                  </div>
-                  <div class="col-12">
-                      <span class="itemLookingEdit">Looking for : </span>
-                      <button class="btn-looking ">
-                          <span>Beauty</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Electronic</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Game</span>                        
-                      </button>
-                  </div>
-              </div>
-            </div>
-            <div class="col-4 hotSwap shadow rounded mt-3">
-              <div class="row ">
-                  <div class="col-2">
-  
-                  </div>
-                  <div class="col-8 d-flex justify-content-center ">
-                      <img src="/img/items/img_item_02.png" alt="">
-                  </div>
-                  <div class="col-2 mt-3 ">
-                      <img src="/img/items/img_item_03.png" alt="">
-                  </div>
-                  <div class="col-12 d-flex justify-content-center mt-3">
-                      <img src="/img/items/img_item_01.png" alt="" >
-                  </div>
-                  <div class="col-12 d-flex justify-content-center itemNameEdit">
-                      <span>Apple Airpods gen3</span>
-                  </div>
-                  <div class="col-12 itemConditionEdit">
-                      <span>Condition : </span><span class="conditionDp">80%</span>
-                  </div>
-                  <div class="col-12">
-                      <span class="itemLookingEdit">Looking for : </span>
-                      <button class="btn-looking ">
-                          <span>Beauty</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Electronic</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Game</span>                        
-                      </button>
-                  </div>
-              </div>
-            </div>
-            <div class="col-4 hotSwap shadow rounded mt-3">
-              <div class="row ">
-                  <div class="col-2">
-  
-                  </div>
-                  <div class="col-8 d-flex justify-content-center ">
-                      <img src="/img/items/img_item_02.png" alt="">
-                  </div>
-                  <div class="col-2 mt-3 ">
-                      <img src="/img/items/img_item_03.png" alt="">
-                  </div>
-                  <div class="col-12 d-flex justify-content-center mt-3">
-                      <img src="/img/items/img_item_01.png" alt="" >
-                  </div>
-                  <div class="col-12 d-flex justify-content-center itemNameEdit">
-                      <span>Apple Airpods gen3</span>
-                  </div>
-                  <div class="col-12 itemConditionEdit">
-                      <span>Condition : </span><span class="conditionDp">80%</span>
-                  </div>
-                  <div class="col-12">
-                      <span class="itemLookingEdit">Looking for : </span>
-                      <button class="btn-looking ">
-                          <span>Beauty</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Electronic</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Game</span>                        
-                      </button>
-                  </div>
-              </div>
-  
-  
-            </div>
-            <div class="col-4 hotSwap shadow rounded mt-3">
-              <div class="row ">
-                  <div class="col-2">
-  
-                  </div>
-                  <div class="col-8 d-flex justify-content-center ">
-                      <img src="/img/items/img_item_02.png" alt="">
-                  </div>
-                  <div class="col-2 mt-3 ">
-                      <img src="/img/items/img_item_03.png" alt="">
-                  </div>
-                  <div class="col-12 d-flex justify-content-center mt-3">
-                      <img src="/img/items/img_item_01.png" alt="" >
-                  </div>
-                  <div class="col-12 d-flex justify-content-center itemNameEdit">
-                      <span>Apple Airpods gen3</span>
-                  </div>
-                  <div class="col-12 itemConditionEdit">
-                      <span>Condition : </span><span class="conditionDp">80%</span>
-                  </div>
-                  <div class="col-12">
-                      <span class="itemLookingEdit">Looking for : </span>
-                      <button class="btn-looking ">
-                          <span>Beauty</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Electronic</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Game</span>                        
-                      </button>
-                  </div>
-              </div>
-            </div>
-            <div class="col-4 hotSwap shadow rounded mt-3">
-              <div class="row ">
-                  <div class="col-2">
-  
-                  </div>
-                  <div class="col-8 d-flex justify-content-center ">
-                      <img src="/img/items/img_item_02.png" alt="">
-                  </div>
-                  <div class="col-2 mt-3 ">
-                      <img src="/img/items/img_item_03.png" alt="">
-                  </div>
-                  <div class="col-12 d-flex justify-content-center mt-3">
-                      <img src="/img/items/img_item_01.png" alt="" >
-                  </div>
-                  <div class="col-12 d-flex justify-content-center itemNameEdit">
-                      <span>Apple Airpods gen3</span>
-                  </div>
-                  <div class="col-12 itemConditionEdit">
-                      <span>Condition : </span><span class="conditionDp">80%</span>
-                  </div>
-                  <div class="col-12">
-                      <span class="itemLookingEdit">Looking for : </span>
-                      <button class="btn-looking ">
-                          <span>Beauty</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Electronic</span>                        
-                      </button>
-                      <button class="btn-looking">
-                          <span>Game</span>                        
-                      </button>
-                  </div>
-              </div>
-            </div>
-          </div>
-    </div>
-    </div>
-    </div>
-
-    <div class="itemInfo container" id="itemInfoContainer">
-        <div class="row">
-            <div class="col-md-7">
-                <h1 class="d-flex align-items-center justify-content-center mt-5">Nintendo Switch Lite pink</h1>
-                <h4 class="d-flex align-items-center justify-content-center ">Category - Game</h4>
-                <div class="d-flex align-items-center justify-content-center mt-5">
-                    <img src="/img/items/img_itemInfo_01.png" alt="" class="img-fluid">
+                <div class="col-12 d-flex justify-content-center mt-3">
+                    <img src="/img/items/img_item_01.png" alt="" >
                 </div>
-                <div class="d-flex align-items-center justify-content-center mt-5">
-                    <img src="/img/items/img_itemInfo_02.png" alt="" class="img-fluid">
-                </div>
+                  <div class="col-12 d-flex justify-content-center itemNameEdit">
+                      <span>Apple Airpods gen3</span>
+                  </div>
+                  <div class="col-12 itemConditionEdit">
+                      <span>Condition : </span><span class="conditionDp">80%</span>
+                  </div>
+                  <div class="col-12">
+                      <span class="itemLookingEdit">Looking for : </span>
+                      <button class="btn-looking ">
+                          <span>Beauty</span>                        
+                      </button>
+                      
+                  </div>
+              </div>
+  
+  
+            </div>            
+            <% giveList.forEach((giveList,index) => { %>
+                <div class="col-4 hotGive shadow rounded mt-3">
+                    <div class="row ">
+                        <span id="swapGiveIndex" style="display: none;"><%= index %></span>
+                        <span id="swapGiveInfoId<%= index %>" style="display: none;"><%= giveList._id %></span>
+                        <span id="swapGiveInfoItemName<%= index %>" style="display: none;"><%= giveList.nameItem %></span>
+                        <span id="swapGiveInfoCategory<%= index %>" style="display: none;"><%= giveList.category %></span>
+                        <span id="swapGiveInfoCondition<%= index %>" style="display: none;"><%= giveList.condition %></span>
+                        <span id="swapGiveInfoShipment<%= index %>" style="display: none;"><%= giveList.shipment %></span>
+                        <span id="swapGiveInfoInteresting<%= index %>" style="display: none;"><%= giveList.interesting %></span>
+                        <span id="swapGiveInfoDescription<%= index %>" style="display: none;"><%= giveList.description %></span>
+                        <span id="swapGiveInfoOwnerName<%= index %>" style="display: none;"><%= giveList.nameOwner %></span>
+                        <span id="swapGiveInfoOwnerRating<%= index %>" style="display: none;"><%= giveList.ratingOwner %></span>
+                        <span id="swapGiveInfoImg2<%= index %>" style="display: none;"><%= giveList.img2 %></span>
 
-
-            </div>
-            <div class="col-md-5">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="d-flex align-items-center justify-content-start mt-4">
-                            <img src="/img/items/img_itemInfo_03.png" alt="" class="img-fluid">
+                        <div class="col-2">
+                        </div>
+                        <div class="col-8 d-flex justify-content-center ">
+                            <img src="/img/items/img_item_05.png" alt="">
+                        </div>
+                        <div class="col-2 mt-3 ">
+                            <!-- <img src="/img/items/img_item_03.png" alt=""> -->
+                        </div>
+                        <div class="col-12 d-flex justify-content-center mt-2">
+                            <img src="/img/uploads/<%= giveList.img2 %>" alt="" class="img-fluid"  style="height: 260px; width: 260px;">
+                        </div>
+                        <div class="col-12 d-flex justify-content-center itemNameEdit">
+                            <span><%= giveList.nameItem %></span>
+                        </div>
+                        <div class="col-12 itemConditionEdit">
+                            <span>Condition : </span><span class="conditionDp"><%= giveList.condition %>%</span>
+                        </div>
+                        <div class="col-12 itemOwnerName">
+                            <span>Donor : </span><span><%= giveList.nameOwner %></span>
+                            <!--
+                            <span class="itemLookingEdit">Looking for : </span>
+                            <button class="btn-looking ">
+                                <span><%= giveList.interesting %></span>                        
+                            </button>
+                            -->
                         </div>
                     </div>
-                    <div class="col-6">                        
-                    </div>
                 </div>
-                <div class="row buttomLine pb-4">
-                    <div class="col-7">
-                        <a id="infoPath1" href="/userInfo" >
-                            <div class="row">
-                                <div class="col-5">
-                                    <div class="d-flex align-items-center justify-content-center mt-5">
-                                        <img src="/img/items/img_itemInfo_04.png" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="col-7">
-                                    <h3 class="d-flex align-items-center justify-content-center mt-5" >Kanin.sua</h3>
-                                    <h5 class="d-flex align-items-center justify-content-center mt-1" >Rating : 4.5</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-5" >                        
-                    </div>
-                </div>
-                <div class="row mt-4 buttomLine pb-4">
-                    <div class="col-6">
-                        <h4 class="d-flex align-items-center justify-content-center">Condition</h4>
-                        <h2 class="mt-3 d-flex align-items-center justify-content-center">80%</h2>
-                    </div>
-                    <div class="col-6">
-                        <h4 class="d-flex align-items-center justify-content-center">Shipment</h4>
-                        <h2 class="mt-3 d-flex align-items-center justify-content-center">Pick up</h2>
-                    </div>
-                </div>
-                <div class="row mt-4 buttomLine pb-4">
-                    <div class="col-6">
-                        <h4 class="d-flex align-items-center justify-content-center ">Interesting</h4>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-start ">
-                        <h5 class="interestingList">Electronic</h5>
-                        <h5 class="interestingList">Home</h5>
-                    </div>                   
-                    
-                </div>
-                <div class="row mt-4" style="margin-left: 3vw;">
-                    <h4>Description</h4>
-                    <h4>xxxxxxxxxxxxxxxxxxxxxxx
-                        xxxxxxxxxxxxxxxxxxxxxxx
-                        xxxxxxxxxxxxxxxxxxxxxxx
-                        </h4>
-                </div>
-                <div class="mt-1 d-flex align-items-center justify-content-center">                    
-                    <a href="#" class="btn" id="clickOffer">
-                        <img src="/img/items/img_itemInfo_06.png" alt="" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <img id="itemInfo-clickBack" src="/img/items/img_itemInfo_07.png" alt="" >
-        <div class="container" id="offerWindow">
-            <div class="mt-3">
-                <h4>My Product</h4>
-                <h6>Select the product you want to exchange</h6>
-            </div>            
-            <div class="row buttomLine">
-                <div class="col-3 d-flex align-items-center justify-content-center">
-                    <img src="/img/items/img_itemInfo_offer_01.png" alt="">
-                </div>
-                <div class="col-6 mt-3" style="text-align: left; ">
-                    <h5 style="color: #2B468B; margin-left: 1.5vw;">Airpod3</h5>
-                    <h6 style=" margin-left: 1.5vw;">Condition : 75% </h6>
-                    <h6 style=" margin-left: 1.5vw;">Date : DD/MM/YYYY</h6>
-                </div>
-                <div class="col-3 d-flex align-items-center justify-content-center">
-                    <a href="#" class="btn checkBoxOffer">
-                        <img src="/img/items/img_itemInfo_offer_02.png" alt="" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            <div class="row buttomLine">
-                <div class="col-3 d-flex align-items-center justify-content-center">
-                    <img src="/img/items/img_itemInfo_offer_03.png" alt="">
-                </div>
-                <div class="col-6 mt-3" style="text-align: left; ">
-                    <h5 style="color: #2B468B; margin-left: 1.5vw;">Airpod3</h5>
-                    <h6 style=" margin-left: 1.5vw;">Condition : 75% </h6>
-                    <h6 style=" margin-left: 1.5vw;">Date : DD/MM/YYYY</h6>
-                </div>
-                <div class="col-3 d-flex align-items-center justify-content-center">
-                    <a href="#" class="btn checkBoxOffer">
-                        <img src="/img/items/img_itemInfo_offer_04.png" alt="" class="img-fluid">
-                    </a>
-                </div>
-            </div>
-            <a href="#" class="btn" id="clickOffer2" style="position: absolute; bottom: -3%; left: 50%; transform: translate(-50%, -50%);">
-                <img src="/img/items/img_itemInfo_offer_05.png" alt="" class="img-fluid">
-            </a>
-            <a href="#" class="btn mt-1" id="clickOffer3" style="position: absolute; top: 0%; right: 0%;">
-                <img src="/img/items/img_itemInfo_offer_06.png" alt="" class="img-fluid">
-            </a>
-        </div>
+            <% }); %>
+          </div>
     </div>
+
+    </div>
+
+    <%- include('itemInfo-swap.ejs') %>
+    <%- include('itemInfo-give.ejs') %>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="/home.js"></script>
-    <script src="/itemInfo.js"></script>
-    <script src="nav1.js"></script>
+    <script src="/home.js"></script>    
+    <script src="/nav1.js"></script>
+    <script> //hotSwap        
+        document.querySelectorAll('.hotSwap').forEach(function(element) {
+            element.onclick = function() {
+                swapGiveIndex = element.querySelector('#swapGiveIndex').innerText                
+                document.getElementById('itemInfoItemName').innerText = element.querySelector('#swapGiveInfoItemName'+swapGiveIndex).innerText
+                document.getElementById('itemInfoCategory').innerText = 'Category - ' + element.querySelector('#swapGiveInfoCategory'+swapGiveIndex).innerText
+                document.getElementById('itemInfoCondition').innerText = element.querySelector('#swapGiveInfoCondition'+swapGiveIndex).innerText + '%'
+                document.getElementById('itemInfoShipment').innerText = element.querySelector('#swapGiveInfoShipment'+swapGiveIndex).innerText
+                document.getElementById('itemInfoInteresting').innerText = element.querySelector('#swapGiveInfoInteresting'+swapGiveIndex).innerText
+                document.getElementById('itemInfoDescription').innerText = element.querySelector('#swapGiveInfoDescription'+swapGiveIndex).innerText
+                document.getElementById('itemInfoOwnerName').innerText = element.querySelector('#swapGiveInfoOwnerName'+swapGiveIndex).innerText
+                document.getElementById('itemInfoOwnerRating').innerText = 'Rating : ' + element.querySelector('#swapGiveInfoOwnerRating'+swapGiveIndex).innerText
+                document.getElementById('showMockUpImg').src = '/img/uploads/'+element.querySelector('#swapGiveInfoImg2'+swapGiveIndex).innerText
+
+                document.getElementById('targetItemID').value = element.querySelector('#swapGiveInfoId'+swapGiveIndex).innerText
+
+                var itemInfoContainer = document.getElementById('itemInfoContainer');
+                itemInfoContainer.style.display = 'block';
+            };
+        });
+    </script>
+    <script> //hotGive        
+        document.querySelectorAll('.hotGive').forEach(function(element) {
+            element.onclick = function() {
+                swapGiveIndex = element.querySelector('#swapGiveIndex').innerText                
+                document.getElementById('itemInfoItemName_give').innerText = element.querySelector('#swapGiveInfoItemName'+swapGiveIndex).innerText
+                document.getElementById('itemInfoCategory_give').innerText = 'Category - ' + element.querySelector('#swapGiveInfoCategory'+swapGiveIndex).innerText
+                document.getElementById('itemInfoCondition_give').innerText = element.querySelector('#swapGiveInfoCondition'+swapGiveIndex).innerText + '%'
+                document.getElementById('itemInfoShipment_give').innerText = element.querySelector('#swapGiveInfoShipment'+swapGiveIndex).innerText
+                document.getElementById('itemInfoInteresting_give').innerText = element.querySelector('#swapGiveInfoInteresting'+swapGiveIndex).innerText
+                document.getElementById('itemInfoDescription_give').innerText = element.querySelector('#swapGiveInfoDescription'+swapGiveIndex).innerText
+                document.getElementById('itemInfoOwnerName_give').innerText = element.querySelector('#swapGiveInfoOwnerName'+swapGiveIndex).innerText
+                document.getElementById('itemInfoOwnerRating_give').innerText = 'Rating : ' + element.querySelector('#swapGiveInfoOwnerRating'+swapGiveIndex).innerText
+                document.getElementById('showMockUpImg_give').src = '/img/uploads/'+element.querySelector('#swapGiveInfoImg2'+swapGiveIndex).innerText
+
+                document.getElementById('targetItemID_give').value = element.querySelector('#swapGiveInfoId'+swapGiveIndex).innerText
+
+                var itemInfoContainer_give = document.getElementById('itemInfoContainer_give');
+                itemInfoContainer_give.style.display = 'block';
+            };
+        });
+    </script>
   </body>
 </html>

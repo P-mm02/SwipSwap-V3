@@ -1,19 +1,18 @@
-var allItems = document.querySelectorAll('.hotSwap');
 
-  // Add onclick event to each items
-  allItems.forEach(function(element) {
-    element.onclick = function() {
-        var itemInfoContainer = document.getElementById('itemInfoContainer');
-        itemInfoContainer.style.visibility = 'visible';
-    };
-  });
+
+//ยังไม่รู้ว่าทำอะไร
+//ยังไม่รู้ว่าทำอะไร
+//ยังไม่รู้ว่าทำอะไร
+//ยังไม่รู้ว่าทำอะไร
+//ยังไม่รู้ว่าทำอะไร
+//ยังไม่รู้ว่าทำอะไร
 
 var itemInfoClickBack = document.getElementById('itemInfo-clickBack');
   // Add a click event listener to the image
   itemInfoClickBack.addEventListener('click', function() {
     // Perform the desired action when the image is clicked
     var itemInfoContainer = document.getElementById('itemInfoContainer');
-    itemInfoContainer.style.visibility = 'hidden';
+    itemInfoContainer.style.display = 'none';
 });
 
 var clickOffer = document.getElementById('clickOffer');
@@ -21,7 +20,7 @@ var clickOffer = document.getElementById('clickOffer');
   clickOffer.addEventListener('click', function() {
     // Perform the desired action when the image is clicked
     var offerWindow = document.getElementById('offerWindow');
-    offerWindow.style.visibility = 'visible';
+    offerWindow.style.display = 'block';
 });
 
 var clickOffer2 = document.getElementById('clickOffer2');
@@ -30,7 +29,7 @@ var clickOffer2 = document.getElementById('clickOffer2');
     // Perform the desired action when the image is clicked
     alert('Successfully Offer!');
     var offerWindow = document.getElementById('offerWindow');
-    offerWindow.style.visibility = 'hidden';
+    offerWindow.style.display = 'none';
 });
 
 var clickOffer3 = document.getElementById('clickOffer3');
@@ -38,7 +37,7 @@ var clickOffer3 = document.getElementById('clickOffer3');
   clickOffer3.addEventListener('click', function() {
     // Perform the desired action when the image is clicked
     var offerWindow = document.getElementById('offerWindow');
-    offerWindow.style.visibility = 'hidden';
+    offerWindow.style.display = 'none';
 });
 
 
@@ -49,12 +48,16 @@ var checkBoxOffers = document.querySelectorAll('.checkBoxOffer');
 checkBoxOffers.forEach(function (checkBoxOffer) {
     // Get the child img element
     var imgElement = checkBoxOffer.querySelector('img');
+
     // Add a click event listener to the img element
     imgElement.addEventListener('click', function () {
         // Perform the desired action when the image is clicked
-        if (imgElement.src.endsWith('/img/items/img_itemInfo_offer_02.png')) {
-            imgElement.src = '/img/items/img_itemInfo_offer_04.png';
+        if (imgElement.src.endsWith('/img/items/img_itemInfo_offer_02.png')) {          
+          imgElement.src = '/img/items/img_itemInfo_offer_04.png';
         } else {
+          document.querySelectorAll('.checkBoxOffer img').forEach(element => {
+              element.src = '/img/items/img_itemInfo_offer_04.png';
+            });
             imgElement.src = '/img/items/img_itemInfo_offer_02.png';
         }
     });

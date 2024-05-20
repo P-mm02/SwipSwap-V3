@@ -106,8 +106,15 @@ body{
 .itemConditionEdit{
     font-size: 22px;
     color: #213360;
-
 }
+
+
+.itemOwnername{
+    font-size: 22px;
+    color: #213360;
+}
+
+
 .itemLookingEdit{
     font-size: 22px;
     color: #213360;

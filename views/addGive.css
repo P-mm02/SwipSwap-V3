@@ -47,7 +47,6 @@
 .addDescription{
     border-color: #8BA2E0;
 }
-#navBar{
-    width: 100vw;
-    height: auto;
+#addSwapAddImg1,#addSwapAddImg2,#addSwapAddImg3,#addSwapAddImg4,#addSwapAddImg5:hover{
+    cursor: pointer;
 }

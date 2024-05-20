@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact</title>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="/profile.css">
+    <script src="https://kit.fontawesome.com/927be25b9b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/contact.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+  <body>
+    
+    <div id="navigation"></div>
+
+    <div class="row" style="margin-top: 200px;">
+        <!--แสดงข้อมูลส่วนตัวของ partner-->
+        
+        <div>
+            <button class="btn btn" onclick="goBack()" style="font-size: 25px; background-color: #6a6a6a; color: #FFFFFF; border-color: #CCCCCC;">&lt; Go Back</button>
+            <script>
+              function goBack() {
+                window.history.back();
+              }
+            </script>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-6" >           
+            <div class="row mt-4 pb-4">
+                <div>
+                    <h2 class="mt-5">โปรดติดต่อคู่ค้าของท่านตามข้อมูลที่ให้ด้านล่างเพื่อทำการแลกเปลี่ยน</h2>
+                    <h2 class="mt-5">In term of trading part. Please contact your partners follow the information below.</h2>
+                    <br></br>
+                    <hr>
+                    <h1>PARTNERS INFORMATION</h1>
+                    <h4 class="mt-5" style="color:rgb(24, 24, 192);">ชื่อ: <%= MS_studentNameTH %></h4>
+                    <h4 style="color:rgb(24, 24, 192);">Name: <%= MS_studentName %></h4>
+                    <h4 style="color:rgb(24, 24, 192);">Email: <%= MS_studentEmail %></h4>
+                    <h4 style="color:rgb(24, 24, 192);">Faculty: <%= MS_studentFaculty %></h4>            
+                    <h4 style="color:rgb(24, 24, 192);">Department: <%= MS_studentDepartment %></h4>
+                    <h4 style="color:rgb(24, 24, 192);">Phone Number: <%= phoneNumber %></h4>
+                    <h4 style="color:rgb(24, 24, 192);">Line App ID: <%= lineID %></h4>
+                    <h4 style="color:rgb(24, 24, 192);">Contact: <%= MS_addressInput %></h4>
+                    <br></br>
+                    <hr>
+                    <br></br>
+                    <h2>คุณได้ทำการแลกเปลี่ยนสิ่งของกับคู่ค้าเรียบร้อยแล้วใช่หรือไม่? กรุณายืนยันเมื่อกระบวนการเสร็จสิ้น</h2>
+                    <h2>If you trade with your partner successful. Please click on button below.</h2>
+                    <br>
+                    <h4 style="color: red;">กรุณาดำเนินการให้แล้วเสร็จภายใน 5 วัน หากเกินเวลาที่กำหนด ระบบจะถือว่าท่านได้ยกเลิกการทำรายการนี้ </h4>
+                    <h4 style="color: red;">Please complete the process within 5 days. If the time limit is exceeded, The system will assume that you have canceled this transaction. </h4>
+
+                </div>
+            </div>
+            <!--ปุ่มยืนยันการแลกเปลี่ยนเสร็จสิ้น-->
+            <div>   
+                <div class="row justify-content-center" id="IsReceived" >
+                  <div class="col-3"></div>
+                  <form action="/dealingConfirm" method="post" class="col-3">
+                    <input name="ItemID" type="text" value="<%= Contact_Item._id %>" style="display: none;">
+                    <button id="ReceivedBtn" class="btn btn-outline-secondary mt-5" type="button" style="height: 61px; width: 154px; border: 0; border-radius: 33px; background-color: #32B793; margin: 20px;"><h2 style="color: #fff; font-size: 25px;">Confirm</h2></button>
+                  </form>
+                  <form action="/dealingCancel" method="post" class="col-3">
+                    <input name="ItemID" type="text" value="<%= Contact_Item._id %>" style="display: none;">
+                    <button id="UnReceivedBtn" class="btn btn-outline-secondary mt-5" type="button" style="height: 61px; width: 154px; border: 0; border-radius: 33px; background-color: #C97171; margin: 20px; "><h2 style="color: #fff; font-size: 25px;">Cancel</h2></button>
+                  </form>
+                  <div class="col-3"></div>                  
+                </div>             
+            </div>
+        </div>
+        
+    </div>
+
+        <div id="confirmCon" class="shadow" style="display: none;">
+            <div class="modal-content d-flex">
+              <div class="modal-header">
+                <h5 class="modal-title">Confirmation</h5>
+                <button id="closeConfirm" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>            
+              </div>
+              <div class="modal-body">
+                Are you sure you want to perform this action?
+              </div>
+              <div class="modal-footer d-flex align-items-center justify-content-center mt-2">
+                <button type="button" class="btn btn-primary" id="confirmAction">Confirm</button>
+              </div>
+            </div>
+          </div>
+    
+    <!--ยังไม่รู้ทำอะไร-->
+    <!--ยังไม่รู้ทำอะไร-->
+    <!--ยังไม่รู้ทำอะไร-->
+    <!--ยังไม่รู้ทำอะไร-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="/profile.js"></script>
+    <script src="/nav2.js"></script>
+    
+     <!--เมื่อกดปุ่ม Confirm(ReceivedBtn) || Candel(UnReceivedBtn)-->
+    <script>
+      ReceivedBtn = document.getElementById('ReceivedBtn');
+      UnReceivedBtn = document.getElementById('UnReceivedBtn');
+      confirmCon = document.getElementById('confirmCon');
+      confirmAction = document.getElementById('confirmAction');
+      closeConfirm = document.getElementById('closeConfirm'); 
+      UnReceivedBtn = document.getElementById("UnReceivedBtn")
+
+            ReceivedBtn.onclick = function() {
+              confirmCon.style.display = 'block';
+              confirmAction.onclick = function(){   
+                  confirmCon.style.display = 'none';        
+                  ReceivedBtn.closest('form').submit();
+              }
+              closeConfirm.onclick = function() {                
+                confirmCon.style.display = 'none';      
+              }; 
+            };
+      
+            UnReceivedBtn.onclick = function() {
+              confirmCon.style.display = 'block';
+              confirmAction.onclick = function(){
+                confirmCon.style.display = 'none';      
+                UnReceivedBtn.closest('form').submit();
+              }
+              closeConfirm.onclick = function() {                
+                confirmCon.style.display = 'none';      
+              };   
+              
+            };
+   </script>
+   
+  </body>
+</html>

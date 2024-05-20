@@ -23,133 +23,322 @@
                     <div class="row mainTab">
                         <div class="col-6 mainTab1 d-flex align-items-center justify-content-center pt-2" id="myProduct">                            
                             <a href="#" class="btn" >
-                                <h3>Response</h3>
+                                <h3>Dealing</h3>
                             </a>
                         </div>
                         <div class="col-6 mainTab2 d-flex align-items-center justify-content-center pt-2" id="editProfile">
                             <a href="#" class="btn" >
-                                <h3>Request</h3>
+                                <h3>Offer</h3>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-7"></div>
-                <div class="col-10 mt-5 " style="background-color: #fff;position: relative; visibility: visible; ;" id="myProductList">
-                    <div class="row buttomLine2">                        
+                <!-- ProFIle-Swap-Dealing -->
+                <div class="col-10 mt-5 " style="background-color: #fff;position: relative; visibility: visible; ;" id="myProductList"> 
+                    <form action="/contact" method="post">                        
+                        <div id="showMockUp1" class="row buttomLine2" style="background-color: #fff;">                            
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <img src="/img/profile/profile-swap/img_profileSwap_04.png" alt="" class="mt-3 mb-3 img-fluid">
+                            </div>
+                            <div class="col-3">
+                                <h4 class="mt-3" style="color: #2B468B;">Apple Watch 2.0</h4>
+                                <h5 style="color: #AFAFAF;">Condition : 75% </h5>
+                                <h5 style="color: #AFAFAF;">Poomtawee Rompho</h5>
+
+                            </div>                        
+                            <div class="col-1 d-flex align-items-center justify-content-center " style="flex-direction: column;">
+                                <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-2 d-flex align-items-center justify-content-center itemInfoActive" style="flex-direction: column;">
+                                <img src="/img/profile/profile-swap/img_profileSwap_01.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-3 itemInfoActive">
+                                <h4 class="mt-3" style="color: #2B468B;">Nintendo Lite Pink</h4>                                
+                                <h5 style="color: #AFAFAF;">Condition : 75% </h5>
+                                <h5 style="color: #AFAFAF;">Sasiwimol  Rueangwongsatorn</h5>
+
+                            </div>
+                            <div class="col-1 d-flex align-items-center justify-content-center flex-column">
+                            <!--   <img src="/img/profile/profile-swap/img_profileSwap_02.png" alt="" class="img-fluid mt-2"> --> 
+                                <button class="btn mt-2" type="submit" style="border: none; background: none;">
+                                    <img src="/img/img_contact_2.png" alt="" style="width: 50px; height: 50px;">                         
+                                </button>
+                            </div> 
+                        </div>
+                    </form>
+                    <% profile_Swap_Dealing_MyItems.forEach((profile_Swap_Dealing_MyItems,index) => { %>
+    
+                        <div id="showMockUp1" class="row buttomLine2" style="background-color: #fff;">                            
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <img src="/img/uploads/<%= profile_Swap_Dealing_MyItems.img2 %>" alt="" class="mt-3 mb-3 img-fluid">
+                            </div>
+                            <div class="col-3">
+                                <h4 class="mt-3" style="color: #2B468B;"><%= profile_Swap_Dealing_MyItems.nameItem %></h4>
+                                <h5 style="color: #AFAFAF;">Condition : <%= profile_Swap_Dealing_MyItems.condition %>% </h5>
+                                <h5 style="color: #AFAFAF;"><%= profile_Swap_Dealing_MyItems.nameOwner %></h5>
+
+                            </div>                        
+                            <div class="col-1 d-flex align-items-center justify-content-center " style="flex-direction: column;">
+                                <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-2 d-flex align-items-center justify-content-center itemInfoActive" style="flex-direction: column;">
+                                <img src="/img/uploads/<%= profile_Swap_Dealing_TargetItems[index].img2 %>" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-3 itemInfoActive">
+                                <h4 class="mt-3" style="color: #2B468B;"><%= profile_Swap_Dealing_TargetItems[index].nameItem %></h4>                                
+                                <h5 style="color: #AFAFAF;">Condition : <%= profile_Swap_Dealing_TargetItems[index].condition %>% </h5>
+                                <h5 style="color: #AFAFAF;"><%= profile_Swap_Dealing_TargetItems[index].nameOwner %></h5>
+                            </div>
+                            <div class="col-1 d-flex align-items-center justify-content-center flex-column">                             
+                                <form action="/contact" method="post">
+
+                                    <input name="ItemID" type="text" id="myItemID<%= index %>" value="<%= profile_Swap_Dealing_MyItems._id %>" style="display: none;">
                         
-                        <div class="col-3 d-flex align-items-center justify-content-center">
-                            <img src="/img/profile/profile-swap/img_profileSwap_01.png" alt="" class="mt-3 mb-3 img-fluid">
+                                    <button class="btn mt-2" type="submit" style="border: none; background: none;">
+                                        <img src="/img/img_contact_2.png" alt="" style="width: 50px; height: 50px;">                         
+                                    </button>
+                                </form>
+                            </div> 
                         </div>
-                        <div class="col-6">
-                            <h3 class="mt-3" style="color: #2B468B;">Nintendo Switch Lite Pink</h3>
-                            <h5 style="color: #AFAFAF;">Condition : 75% </h5>
-                            <h5 style="color: #AFAFAF;">Date : DD/MM/YYYY</h5>
-                        </div>                        
-                        <div class="col-3 d-flex align-items-center justify-content-center " style="flex-direction: column;">
-                            <img src="/img/profile/profile-swap/img_profileSwap_02.png" alt="" class="img-fluid mt-2">
-
-                            <button class="btn mt-2">
-                                <a href="/message">
-                                    <img src="/img/img_home_04.png" alt="" class="img-fluid">
-                                </a>                                
-                            </button>                           
-
-                        </div>
-                    </div>                    
+                        <% }); %>
+                                        
                 </div>
-                <div class="col-10 mt-5" id="editProfileList" style="display: none; background-color: #fff;">
-                    <div class="row buttomLine2">          
-                        
-                        <div class="col-2 d-flex align-items-center justify-content-center">
-                            <img src="/img/profile/profile-swap/img_profileSwap_04.png" alt="" class="mt-3 mb-3 img-fluid">
-                        </div>
-                        <div class="col-3">
-                            <h4 class="mt-3" style="color: #2B468B;">Apple Watch 2.0</h4>
-                            <h5 style="color: #AFAFAF;">Condition : 75% </h5>
-                        </div>                        
-                        <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
-                            <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
-                            <img src="/img/profile/profile-swap/img_profileSwap_05.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-3">
-                            <h4 class="mt-3" style="color: #2B468B;">Logitech mouse</h4>
-                            <h5 style="color: #AFAFAF;">Condition : 75% </h5>
-                        </div> 
+                <!-- ProFIle-Swap-Offer -->
+                <div class="col-10 mt-5" id="editProfileList" style="display: none; ">
+                    <div class="container mb-3">
+                        <button class="btn btn-primary" id="offerSelectBtn1" >My Offer</button>
+                        <button class="btn btn-primary" id="offerSelectBtn2" >Receive an offer </button>
+                                               
                     </div>
-                    <div class="row buttomLine2">                        
+                    <!-- ProFIle-Swap-Offer-MyOffer -->
+                    <div id="offerSelectBtn1Con">
+                        <!-- MockUp -->
+                        <div class="row buttomLine2" style="background-color: #fff;">    
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <img src="/img/profile/profile-swap/img_profileSwap_04.png" alt="" class="mt-3 mb-3 img-fluid">
+                            </div>
+                            <div class="col-3">
+                                <h4 class="mt-3" style="color: #2B468B;">Apple Watch 2.0</h4>
+                                <h5 style="color: #AFAFAF;">Condition : 75% </h5>
+                                <h5 style="color: #AFAFAF;">Sasiwimol  Rueangwongsatorn</h5>
+
+                            </div>                        
+                            <div class="col-1 d-flex align-items-center justify-content-center " style="flex-direction: column;">
+                                <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-2 d-flex align-items-center justify-content-center itemInfoActive" style="flex-direction: column;">
+                                <img src="/img/profile/profile-swap/img_profileSwap_01.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-3 itemInfoActive">
+                                <h4 class="mt-3" style="color: #2B468B;">Nintendo Lite Pink</h4>
+                                <h5 style="color: #AFAFAF;">Condition : 75% </h5>
+                                <h5 style="color: #AFAFAF;">Poomtawee Rompho</h5>
+
+                            </div>
+                            <div class="col-1 d-flex align-items-center justify-content-center">
+                                <img src="/img/profile/img_profile_09.png" alt="" class="img-fluid">
+                            </div> 
+                        </div>
+                        <!-- RealOnes -->
+                        <% profile_Swap_Offer_MyOffer_TargetItems.forEach((profile_Swap_Offer_MyOffer_TargetItems,index) => { %>
+    
+                        <div class="row buttomLine2" style="background-color: #fff;">   
+    
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <img src="/img/uploads/<%= profile_Swap_Offer_MyOffer_MyItems[index].img2 %>" alt="" class="mt-3 mb-3 img-fluid">
+                            </div>
+                            <div class="col-3">
+                                <h4 class="mt-3" style="color: #2B468B;"><%= profile_Swap_Offer_MyOffer_MyItems[index].nameItem %></h4>
+                                <h5 style="color: #AFAFAF;">Condition : <%= profile_Swap_Offer_MyOffer_MyItems[index].condition %> %</h5>
+                                <h5 style="color: #AFAFAF;"><%= profile_Swap_Offer_MyOffer_MyItems[index].nameOwner %></h5>
+                            </div>                        
+                            <div class="col-1 d-flex align-items-center justify-content-center " style="flex-direction: column;">
+                                <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
+                                <img src="/img/uploads/<%= profile_Swap_Offer_MyOffer_TargetItems.img2 %>" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-3 ">
+                                <h4 class="mt-3" style="color: #2B468B;"><%= profile_Swap_Offer_MyOffer_TargetItems.nameItem %></h4>
+                                <h5 style="color: #AFAFAF;">Condition : <%= profile_Swap_Offer_MyOffer_TargetItems.condition %> %</h5>
+                                <h5 style="color: #AFAFAF;"><%= profile_Swap_Offer_MyOffer_TargetItems.nameOwner %></h5>
+
+                            </div>
+                            <div class="col-1 d-flex align-items-center justify-content-center">
+                                <form action="/DeleteSwapOffer" method="post">
+                                                                        
+                                    <input name="ItemID" type="text" id="myItemID<%= index %>" value="<%= profile_Swap_Offer_MyOffer_TargetItems._id %>" style="display: none;">
+                                    <input name="OfferItemID" type="text" id="OfferItemID<%= index %>" value="<%= profile_Swap_Offer_MyOffer_MyItems[index]._id %>" style="display: none;">
+      
+                                    <button class="btn DeleteSwapOfferBtn" type="button" >
+                                        <img src="/img/profile/img_profile_09.png" alt="" class="img-fluid">
+                                    </button> 
+                                </form>
+                            </div> 
+                        </div>
                         
-                        <div class="col-2 d-flex align-items-center justify-content-center">
-                            <img src="/img/profile/profile-swap/img_profileSwap_04.png" alt="" class="mt-3 mb-3 img-fluid">
-                        </div>
-                        <div class="col-3">
-                            <h4 class="mt-3" style="color: #2B468B;">Apple Watch 2.0</h4>
-                            <h5 style="color: #AFAFAF;">Condition : 75% </h5>
-                        </div>                        
-                        <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
-                            <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
-                            <img src="/img/profile/profile-swap/img_profileSwap_05.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-3">
-                            <h4 class="mt-3" style="color: #2B468B;">Logitech mouse</h4>
-                            <h5 style="color: #AFAFAF;">Condition : 75% </h5>
-                        </div> 
+                        <% }); %>
                     </div>
-                    <div class="row buttomLine2">                        
+                    <!-- ProFIle-Swap-Offer-Receive an offer -->
+                    <div id="offerSelectBtn2Con">
+                        <!-- MockUp -->
+                        <div class="row buttomLine2" style="background-color: #fff;">    
+                            <div class="col-2 d-flex align-items-center justify-content-center">
+                                <img src="/img/items/product.png" alt="" class="mt-3 mb-3 img-fluid">
+                            </div>
+                            <div class="col-3">
+                                <h4 class="mt-3" style="color: #2B468B;">Smsung A18</h4>
+                                <h5 style="color: #AFAFAF;">Condition : 75% </h5>
+                                <h5 style="color: #AFAFAF;">Poomtawee Rompho</h5>
+
+                            </div>                        
+                            <div class="col-1 d-flex align-items-center justify-content-center " style="flex-direction: column;">
+                                <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-2 d-flex align-items-center justify-content-center itemInfoActive" style="flex-direction: column;">
+                                <img src="/img/profile/profile-swap/img_profileSwap_01.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-3 itemInfoActive">
+                                <h4 class="mt-3" style="color: #2B468B;">Nintendo Lite Pink</h4>
+                                <h5 style="color: #AFAFAF;">Condition : 75% </h5>
+                                <h5 style="color: #AFAFAF;">Sasiwimol Rueangwongsatorn</h5>
+
+                            </div>
+                            <div class="col-1 d-flex align-items-center justify-content-center">
+                                <img src="/img/profile/img_profile_09.png" alt="" class="img-fluid">
+                            </div> 
+                        </div>
+
+                        <!-- RealOne -->
                         
-                        <div class="col-2 d-flex align-items-center justify-content-center">
-                            <img src="/img/profile/profile-swap/img_profileSwap_04.png" alt="" class="mt-3 mb-3 img-fluid">
+                        <% profile_Swap_Offer_ReceiveAnOffer_MyItems.forEach((profile_Swap_Offer_ReceiveAnOffer_MyItems,index) => { %>
+                            
+                        <div class="row buttomLine2 ReceiveAnOfferCon" style="background-color: #fff;">
+
+                            <span class="ReceiveAnOfferIndex" style="display: none;"><%= index %></span>
+
+                            <div class="col-2 d-flex align-items-center justify-content-center ">
+                                <img src="/img/uploads/<%= profile_Swap_Offer_ReceiveAnOffer_MyItems.img2 %>" alt="" class="mt-3 mb-3 img-fluid">
+                            </div>
+                            <div class="col-3 ">
+                                <h4 class="mt-3" style="color: #2B468B;"><%= profile_Swap_Offer_ReceiveAnOffer_MyItems.nameItem %></h4>
+                                <h5 style="color: #AFAFAF;">Condition : <%= profile_Swap_Offer_ReceiveAnOffer_MyItems.condition %> %</h5>
+                                <h5 style="color: #AFAFAF;"><%= profile_Swap_Offer_ReceiveAnOffer_MyItems.nameOwner %></h5>
+
+                            </div>                        
+                            <div class="col-1 d-flex align-items-center justify-content-center " style="flex-direction: column;">
+                                <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
+                                <img src="/img/uploads/<%= profile_Swap_Offer_ReceiveAnOffer_TargetItems[index].img2 %>" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-3 ">
+                                <h4 class="mt-3" style="color: #2B468B;"><%= profile_Swap_Offer_ReceiveAnOffer_TargetItems[index].nameItem %></h4>
+                                <h5 style="color: #AFAFAF;">Condition : <%= profile_Swap_Offer_ReceiveAnOffer_TargetItems[index].condition %> %</h5>
+                                <h5 style="color: #AFAFAF;"> <%= profile_Swap_Offer_ReceiveAnOffer_TargetItems[index].nameOwner %></h5>
+
+                            </div>
+                            <div class="col-1 d-flex align-items-center justify-content-center flex-column">
+                                <form action="/makeSwapDeal" method="post" id="makeSwapDeal">
+
+                                    <input name="myID" type="text" id="myID" value="<%= profile_Swap_Offer_ReceiveAnOffer_MyItems.idOwner %>" style="display: none;">
+                                    <input name="myItemID" type="text" id="myItemID" value="<%= profile_Swap_Offer_ReceiveAnOffer_MyItems._id %>" style="display: none;">
+                                    <input name="offerorID" type="text" id="offerorID" value="<%= profile_Swap_Offer_ReceiveAnOffer_TargetItems[index].idOwner %>" style="display: none;">
+                                    <input name="exchangeItemID" type="text" id="exchangeItemID" value="<%= profile_Swap_Offer_ReceiveAnOffer_TargetItems[index]._id %>" style="display: none;">
+
+                                    <button class="btn mb-5" type="button" onclick="confirmOffer()">
+                                        <img src="/img/items/img_itemInfo_offer_02.png" alt="" class="img-fluid">
+                                    </button>
+                                    <script>
+                                        function confirmOffer() {
+                                            if (confirm("Are you sure you want to accept this offer?")) {
+                                                document.getElementById('makeSwapDeal').submit();
+                                            } else {
+                                                // User canceled, do nothing
+                                            }
+                                        }
+                                    </script>
+                                </form>
+                                <form action="/DeleteSwapOffer" method="post">
+                                    
+                                    <input name="ItemID" type="text" id="myItemID<%= index %>" value="<%= profile_Swap_Offer_ReceiveAnOffer_MyItems._id %>" style="display: none;">
+                                    <input name="OfferItemID" type="text" id="OfferItemID<%= index %>" value="<%= profile_Swap_Offer_ReceiveAnOffer_TargetItems[index]._id %>" style="display: none;">
+
+
+
+                                    <button class="btn DeleteSwapOfferBtn" type="button" >
+                                        <img src="/img/profile/img_profile_09.png" alt="" class="img-fluid">
+                                    </button> 
+                                </form>
+                                
+                            </div> 
                         </div>
-                        <div class="col-3">
-                            <h4 class="mt-3" style="color: #2B468B;">Apple Watch 2.0</h4>
-                            <h5 style="color: #AFAFAF;">Condition : 75% </h5>
-                        </div>                        
-                        <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
-                            <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
-                            <img src="/img/profile/profile-swap/img_profileSwap_05.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-3">
-                            <h4 class="mt-3" style="color: #2B468B;">Logitech mouse</h4>
-                            <h5 style="color: #AFAFAF;">Condition : 75% </h5>
-                        </div> 
-                    </div>
-                    <div class="row buttomLine2">                        
                         
-                        <div class="col-2 d-flex align-items-center justify-content-center">
-                            <img src="/img/profile/profile-swap/img_profileSwap_04.png" alt="" class="mt-3 mb-3 img-fluid">
-                        </div>
-                        <div class="col-3">
-                            <h4 class="mt-3" style="color: #2B468B;">Apple Watch 2.0</h4>
-                            <h5 style="color: #AFAFAF;">Condition : 75% </h5>
-                        </div>                        
-                        <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
-                            <img src="/img/profile/profile-swap/img_profileSwap_06.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-2 d-flex align-items-center justify-content-center " style="flex-direction: column;">
-                            <img src="/img/profile/profile-swap/img_profileSwap_05.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-3">
-                            <h4 class="mt-3" style="color: #2B468B;">Logitech mouse</h4>
-                            <h5 style="color: #AFAFAF;">Condition : 75% </h5>
-                        </div> 
-                    </div>
+                        <% }); %>
+                    </div>                    
+                    
+
                 </div>
             </div>
         </div>        
     </div>
+
+    <%- include('itemInfo-swap.ejs') %>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="profile.js"></script>
+    <script src="nav2.js"></script>
     <style>
         #myProfileNav2{
             color: #F99746;
         }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="profile.js"></script>
-    <script src="nav2.js"></script>
+        #offerSelectBtn1,#offerSelectBtn2{
+            background-color: #707070;
+            border: none;
+        }
+        #offerSelectBtn1:hover,#offerSelectBtn2:hover{
+            background-color: #444242;
+            border: none;
+        }
 
+        #offerSelectBtn2Con{
+            display: none;
+        }
+    </style>
+    <script>
+        document.getElementById('offerSelectBtn1').onclick = function() {
+            document.getElementById('offerSelectBtn1').style.background = '#444242'
+            document.getElementById('offerSelectBtn2').style.background = '#707070'
+
+            document.getElementById('offerSelectBtn1Con').style.display = 'block'
+            document.getElementById('offerSelectBtn2Con').style.display = 'none'
+        }
+        document.getElementById('offerSelectBtn2').onclick = function() {
+            document.getElementById('offerSelectBtn1').style.background = '#707070'
+            document.getElementById('offerSelectBtn2').style.background = '#444242'
+
+            document.getElementById('offerSelectBtn2Con').style.display = 'block'
+            document.getElementById('offerSelectBtn1Con').style.display = 'none'
+        }
+    </script>
+    <!-- DeleteSwapOfferBtn --> 
+    <script>
+        document.querySelectorAll('.DeleteSwapOfferBtn').forEach(function(DeleteSwapOfferBtn) {            
+            DeleteSwapOfferBtn.addEventListener('click', function () {                
+                if (confirm("Are you sure you want to delete this offer?")) {
+                    let DeleteSwapOfferForm = this.closest('form');
+                    if (DeleteSwapOfferForm) {
+                        DeleteSwapOfferForm.submit();
+                    } else {
+                        console.error("Form not found for DeleteSwapOfferBtn");
+                    }
+                } else {
+                    // User canceled, do nothing
+                }
+            });
+        });
+    </script>   
+    
   </body>
 </html>

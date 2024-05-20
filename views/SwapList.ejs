@@ -8,265 +8,186 @@
     <link rel="stylesheet" href="home.css">
   </head>
   <body>
-    <div class="fixed-top row pb-4" style="background-color: #8BA2E0;">
-        <nav class="navbar navbar-expand-lg ">
-            <a class="navbar-brand" href="/home">
-                <img src="/img/img_home_01.png" alt="" class="img-fluid">
-            </a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>        
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <div class="navbar-nav ">
-                    <a class="nav-item nav-link " href="/home">Home</a>
-                    <a class="nav-item nav-link " href="/SwapList">Swap</a>
-                    <a class="nav-item nav-link " href="/GiveList">Giveaway</a>
-                    <a class="navbar-brand" href="/profile">
-                        <img src="/img/img_home_02.png" alt="" class="img-fluid">
-                    </a>
-                    
-                </div>
-            </div>            
-        </nav>
-        <div class="col-12 d-flex justify-content-center">
-            <div class="row">
-                <img src="/img/img_home_07.png" alt="" id="swapThisForThat" class="col-12">
-                <a href="/swapGive" class="col-12 d-flex justify-content-center">
-                    <button id="addButton">
-                        <img src="/img/img_home_08.png" alt="" >
-                    </button>
-                </a> 
-            </div>                   
-        </div>
-    </div>
-    
+    <%- include('nav1.ejs') %>
+
     <div>
         <div class="topBackground"></div>
     </div>
 
-    <div  id="container-down">    
-
-    <div class="hotForSwap">
-        <img src="/img/img_home_09.png" alt="" id="">
-        <div class="row hotSwapCon">
-          <div class="col-4 hotSwap shadow rounded mt-3">
-            <div class="row ">
-                <div class="col-2">
-
-                </div>
-                <div class="col-8 d-flex justify-content-center ">
-                    <img src="/img/items/img_item_02.png" alt="">
-                </div>
-                <div class="col-2 mt-3 ">
-                    <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                </div>
-                <div class="col-12 d-flex justify-content-center mt-3">
-                    <img src="/img/items/img_item_01.png" alt="" >
-                </div>
-                <div class="col-12 d-flex justify-content-center itemNameEdit">
-                    <span>Apple Airpods gen3</span>
-                </div>
-                <div class="col-12 itemConditionEdit">
-                    <span>Condition : </span><span class="conditionDp">80%</span>
-                </div>
-                <div class="col-12">
-                    <span class="itemLookingEdit">Looking for : </span>
-                    <button class="btn-looking ">
-                        <span>Beauty</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Electronic</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Game</span>                        
-                    </button>
+    <div id="container-down">    
+        <!--Search Bar-->
+        <div class="row">
+            <div class="col-md-6 offset-md-3"  >
+                <div class="input-group search-bar" id="searchBarCon">
+                
+                    <input id="myInput" type="text" onkeyup="mySearchBar()"  class="form-control" placeholder="Search..." style="border: none; border-radius: 45px; border-top-right-radius: 0%; border-bottom-right-radius: 0%;">
+                    <div class="input-group-append">
+                        <button id="searchBarBtn" class="btn btn-outline-secondary" type="button" style="background-color: #fff; border: none; border-radius: 45px; border-bottom-left-radius: 0%; border-top-left-radius: 0%;">
+                        <img src="/img/img_home_05.png" alt="">
+                        </button>
+                    </div>
                 </div>
             </div>
-
-
-          </div>
-          <div class="col-4 hotSwap shadow rounded mt-3">
-            <div class="row ">
-                <div class="col-2">
-
-                </div>
-                <div class="col-8 d-flex justify-content-center ">
-                    <img src="/img/items/img_item_02.png" alt="">
-                </div>
-                <div class="col-2 mt-3 ">
-                    <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                </div>
-                <div class="col-12 d-flex justify-content-center mt-3">
-                    <img src="/img/items/img_item_01.png" alt="" >
-                </div>
-                <div class="col-12 d-flex justify-content-center itemNameEdit">
-                    <span>Apple Airpods gen3</span>
-                </div>
-                <div class="col-12 itemConditionEdit">
-                    <span>Condition : </span><span class="conditionDp">80%</span>
-                </div>
-                <div class="col-12">
-                    <span class="itemLookingEdit">Looking for : </span>
-                    <button class="btn-looking ">
-                        <span>Beauty</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Electronic</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Game</span>                        
-                    </button>
-                </div>
+        </div>
+        <div class="dropdown" style="margin-left: -100px;">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #8BA2E0; font-weight: 500;">
+          PRODUCT FILTERS
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" >
+              <input type="checkbox" class="btn-check" id="Filter_HideMyProduct" autocomplete="off">
+              <label class="btn btn-outline-primary" for="Filter_HideMyProduct" style="font-weight: 500;">Hide my Product</label>
+            
+              <input type="checkbox" class="btn-check" id="Filter_Electronic" autocomplete="off">
+              <label class="btn btn-outline-primary" for="Filter_Electronic" style="font-weight: 500;">Electronic</label>
+            
+              <input type="checkbox" class="btn-check" id="Filter_Enjoyment" autocomplete="off">
+              <label class="btn btn-outline-primary" for="Filter_Enjoyment" style="font-weight: 500;">Enjoyment</label>
+      
+              <input type="checkbox" class="btn-check" id="Filter_Education" autocomplete="off">
+              <label class="btn btn-outline-primary" for="Filter_Education" style="font-weight: 500;">Education</label>
+            
+              <input type="checkbox" class="btn-check" id="Filter_Fashion" autocomplete="off">
+              <label class="btn btn-outline-primary" for="Filter_Fashion" style="font-weight: 500;">Fashion</label>
+            
+              <input type="checkbox" class="btn-check" id="Filter_Furniture" autocomplete="off">
+              <label class="btn btn-outline-primary" for="Filter_Furniture" style="font-weight: 500;">Furniture</label>
+      
+              <input type="checkbox" class="btn-check" id="Filter_General" autocomplete="off">
+              <label class="btn btn-outline-primary" for="Filter_General" style="font-weight: 500;">General</label>
             </div>
-          </div>
-          <div class="col-4 hotSwap shadow rounded mt-3">
-            <div class="row ">
-                <div class="col-2">
-
-                </div>
-                <div class="col-8 d-flex justify-content-center ">
-                    <img src="/img/items/img_item_02.png" alt="">
-                </div>
-                <div class="col-2 mt-3 ">
-                    <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                </div>
-                <div class="col-12 d-flex justify-content-center mt-3">
-                    <img src="/img/items/img_item_01.png" alt="" >
-                </div>
-                <div class="col-12 d-flex justify-content-center itemNameEdit">
-                    <span>Apple Airpods gen3</span>
-                </div>
-                <div class="col-12 itemConditionEdit">
-                    <span>Condition : </span><span class="conditionDp">80%</span>
-                </div>
-                <div class="col-12">
-                    <span class="itemLookingEdit">Looking for : </span>
-                    <button class="btn-looking ">
-                        <span>Beauty</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Electronic</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Game</span>                        
-                    </button>
-                </div>
-            </div>
-          </div>
-          <div class="col-4 hotSwap shadow rounded mt-3">
-            <div class="row ">
-                <div class="col-2">
-
-                </div>
-                <div class="col-8 d-flex justify-content-center ">
-                    <img src="/img/items/img_item_02.png" alt="">
-                </div>
-                <div class="col-2 mt-3 ">
-                    <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                </div>
-                <div class="col-12 d-flex justify-content-center mt-3">
-                    <img src="/img/items/img_item_01.png" alt="" >
-                </div>
-                <div class="col-12 d-flex justify-content-center itemNameEdit">
-                    <span>Apple Airpods gen3</span>
-                </div>
-                <div class="col-12 itemConditionEdit">
-                    <span>Condition : </span><span class="conditionDp">80%</span>
-                </div>
-                <div class="col-12">
-                    <span class="itemLookingEdit">Looking for : </span>
-                    <button class="btn-looking ">
-                        <span>Beauty</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Electronic</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Game</span>                        
-                    </button>
-                </div>
-            </div>
-
-
-          </div>
-          <div class="col-4 hotSwap shadow rounded mt-3">
-            <div class="row ">
-                <div class="col-2">
-
-                </div>
-                <div class="col-8 d-flex justify-content-center ">
-                    <img src="/img/items/img_item_02.png" alt="">
-                </div>
-                <div class="col-2 mt-3 ">
-                    <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                </div>
-                <div class="col-12 d-flex justify-content-center mt-3">
-                    <img src="/img/items/img_item_01.png" alt="" >
-                </div>
-                <div class="col-12 d-flex justify-content-center itemNameEdit">
-                    <span>Apple Airpods gen3</span>
-                </div>
-                <div class="col-12 itemConditionEdit">
-                    <span>Condition : </span><span class="conditionDp">80%</span>
-                </div>
-                <div class="col-12">
-                    <span class="itemLookingEdit">Looking for : </span>
-                    <button class="btn-looking ">
-                        <span>Beauty</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Electronic</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Game</span>                        
-                    </button>
-                </div>
-            </div>
-          </div>
-          <div class="col-4 hotSwap shadow rounded mt-3">
-            <div class="row ">
-                <div class="col-2">
-
-                </div>
-                <div class="col-8 d-flex justify-content-center ">
-                    <img src="/img/items/img_item_02.png" alt="">
-                </div>
-                <div class="col-2 mt-3 ">
-                    <!-- <img src="/img/items/img_item_03.png" alt=""> -->
-                </div>
-                <div class="col-12 d-flex justify-content-center mt-3">
-                    <img src="/img/items/img_item_01.png" alt="" >
-                </div>
-                <div class="col-12 d-flex justify-content-center itemNameEdit">
-                    <span>Apple Airpods gen3</span>
-                </div>
-                <div class="col-12 itemConditionEdit">
-                    <span>Condition : </span><span class="conditionDp">80%</span>
-                </div>
-                <div class="col-12">
-                    <span class="itemLookingEdit">Looking for : </span>
-                    <button class="btn-looking ">
-                        <span>Beauty</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Electronic</span>                        
-                    </button>
-                    <button class="btn-looking">
-                        <span>Game</span>                        
-                    </button>
-                </div>
-            </div>
-          </div>
+          </ul>
         </div>
     </div>
-
-    <hr style="height:100px">
-
+    
+      <style>
+          .search-bar {
+            max-width: 709px;
+            height: 81px;
+            margin: 20px auto;
+            position: fixed;
+            top: 350px;
+            z-index: 9999;
+            left: 50%;
+            right: 50%;
+            transform: translateX(-50%);
+          }
+          #searchBarBtn {
+              height: 81px;
+              width: 81px;
+              
+          }    
+      </style>
     
 
 
+    <!--แสดง list ทั้งหมดของ swap-->
+    <ul id="myUL">
+    <div class="hotForSwap">
+        <img src="/img/img_home_09.png" alt="" id="">
+        <div class="row hotSwapCon">
+          <!--รายละเอียดแต่ละกรอบของ swap items-->
+          <span id="myID" style="display: none;"><%= userLogin %></span>
+            <% swapList.forEach((swapList,index) => { %>              
+                <div class="col-4 hotSwap shadow rounded mt-3 liHotSwap" >
+                  <div class="row">
+                    <span id="swapGiveIndex" style="display: none;"><%= index %></span>
+                    <span id="swapGiveInfoItemName<%= index %>" style="display: none;"><%= swapList.nameItem %></span>
+                    <span class="itemInfoCategory" id="swapGiveInfoCategory<%= index %>" style="display: none;"><%= swapList.category %></span>
+                    <span id="swapGiveInfoCondition<%= index %>" style="display: none;"><%= swapList.condition %></span>
+                    <span id="swapGiveInfoShipment<%= index %>" style="display: none;"><%= swapList.shipment %></span>
+                    <span id="swapGiveInfoInteresting<%= index %>" style="display: none;"><%= swapList.interesting %></span>
+                    <span id="swapGiveInfoDescription<%= index %>" style="display: none;"><%= swapList.description %></span>
+                    <span id="swapGiveInfoOwnerName<%= index %>" style="display: none;"><%= swapList.nameOwner %></span>
+                    <span id="swapGiveInfoOwnerRating<%= index %>" style="display: none;"><%= swapList.ratingOwner %></span>
+                    <span class="swapGiveInfoIdOwner" id="swapGiveInfoIdOwner<%= index %>" style="display: none;"><%= swapList.idOwner %></span>
+                    <span id="swapGiveInfoId<%= index %>" style="display: none;"><%= swapList._id %></span>
+                    <span id="swapGiveInfoImg2<%= index %>" style="display: none;"><%= swapList.img2 %></span>
+
+                    <div class="col-2"></div>
+                    <div class="col-8 d-flex justify-content-center">
+                      <img src="/img/items/img_item_02.png" alt="">
+                    </div>
+                    <div class="col-2 mt-3"></div>
+                    <div class="col-12 d-flex justify-content-center mt-2">
+                      <img src="/img/uploads/<%= swapList.img2 %>" alt="" class="img-fluid" style="height: 260px; width: 260px;">
+                    </div>
+          
+                    <div class="col-12 d-flex justify-content-center itemNameEdit">
+                      <span><%= swapList.nameItem %></span>
+                    </div>
+          
+                    <div class="col-12 itemConditionEdit">
+                      <span>Condition : </span><span class="conditionDp"><%= swapList.condition %>%</span>
+                    </div>
+                    <div class="col-12">
+                      <span class="itemLookingEdit">Looking for : </span>
+                      <button class="btn-looking">
+                        <span><%= swapList.interesting %></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>              
+            <% }); %>
+            <script src="Filter.js"></script>      
+        </div>
+    
+    </div>
+    </div>
+    </ul>
+
+    <%- include('itemInfo-swap.ejs') %>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="/home.js"></script>
-    <script src="/itemInfo.js"></script>
+    
+    <!--script for กรอง input search bar-->
+    <script>
+        function mySearchBar() {
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('myInput');
+          filter = input.value.toUpperCase(); //แปลงอินพุทเป็นตัวพิมใหญ่
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByClassName('liHotSwap');
+        
+          for (i = 0; i < li.length; i++) {
+            a = li[i].querySelector("span[id^='swapGiveInfoItemName']"); // a = item name
+            txtValue = a.textContent || a.innerText; //textContent คือ textเพรียวๆ innerText คือ Text ที่มี Style
+            if (txtValue.toUpperCase().indexOf(filter) > -1) { //หาไม่เจอ = -1 ยังไม่หา = 0 
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+        </script>    
+    <script>
+        document.querySelectorAll('.hotSwap').forEach(function(element) {
+            element.onclick = function() {
+                swapGiveIndex = element.querySelector('#swapGiveIndex').innerText                
+                document.getElementById('itemInfoItemName').innerText = element.querySelector('#swapGiveInfoItemName'+swapGiveIndex).innerText
+                document.getElementById('itemInfoCategory').innerText = 'Category - ' + element.querySelector('#swapGiveInfoCategory'+swapGiveIndex).innerText
+                document.getElementById('itemInfoCondition').innerText = element.querySelector('#swapGiveInfoCondition'+swapGiveIndex).innerText + '%'
+                document.getElementById('itemInfoShipment').innerText = element.querySelector('#swapGiveInfoShipment'+swapGiveIndex).innerText
+                document.getElementById('itemInfoInteresting').innerText = element.querySelector('#swapGiveInfoInteresting'+swapGiveIndex).innerText
+                document.getElementById('itemInfoDescription').innerText = element.querySelector('#swapGiveInfoDescription'+swapGiveIndex).innerText
+                document.getElementById('itemInfoOwnerName').innerText = element.querySelector('#swapGiveInfoOwnerName'+swapGiveIndex).innerText
+                document.getElementById('itemInfoOwnerRating').innerText = 'Rating : ' + element.querySelector('#swapGiveInfoOwnerRating'+swapGiveIndex).innerText
+                document.getElementById('showMockUpImg').src = '/img/uploads/'+element.querySelector('#swapGiveInfoImg2'+swapGiveIndex).innerText
+
+                document.getElementById('targetItemID').value = element.querySelector('#swapGiveInfoId'+swapGiveIndex).innerText
+
+                var itemInfoContainer = document.getElementById('itemInfoContainer');
+                itemInfoContainer.style.display = 'block';
+            };
+        });
+    </script>
+    <script>
+      // JavaScript to prevent closing dropdown on checkbox click
+      var dropdownMenu = document.querySelector('.dropdown-menu');
+      dropdownMenu.addEventListener('click', function (event) {
+      event.stopPropagation();
+      });         
+    </script>
   </body>
 </html>
